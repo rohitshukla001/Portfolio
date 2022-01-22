@@ -86,6 +86,10 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
 
 body {
   font-family: "roboto", sans-serif;

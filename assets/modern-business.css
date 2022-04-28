@@ -25,7 +25,9 @@ body {
 .bg-block {
   background-color: rgb(214, 237, 208);
 }
-
+.bg-blockc {
+  background-color:#d6edd0
+}
 .products .caption {
     height: 130px;
     overflow: hidden;

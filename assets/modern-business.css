@@ -23,7 +23,7 @@ body {
     opacity: 0.8;
 }
 .bg-block {
-  background-color: #DAEDFF;
+  background-color: rgb(225, 245, 252);
 }
 
 .products .caption {

@@ -22,7 +22,9 @@ body {
 .img-hover:hover {
     opacity: 0.8;
 }
-
+.bg-block {
+  background-color: rgb(0, 204, 204);
+}
 
 .products .caption {
     height: 130px;

@@ -169,19 +169,7 @@
          margin: 1em 0;
          font-size: 16px;
          }
-      </style>
-            <script type="text/javascript">  
-         $ = function(id) {
-         return document.getElementById(id);
-         }
-         
-         var show = function(id) {
-         $(id).style.display ='block';
-         }
-         var hide = function(id) {
-         $(id).style.display ='none';
-         }  
-      </script> 
+      
    </head>
    <body class="dark-vertion black-bg">
       <!--
@@ -303,20 +291,30 @@
                            <li><span>Bootstrap</span></li>
                         </ul>
                      </div>
-                     
-                     <button class="button" href="#" onclick="show('popup')" >Download Resume</button>
+                     		 
+      </style>
+	        <script type="text/javascript">  
+         $ = function(id) {
+         return document.getElementById(id);
+         }
+         
+         var show = function(id) {
+         $(id).style.display ='block';
+         }
+         var hide = function(id) {
+         $(id).style.display ='none';
+         }  
+      </script>  
+                     <button class="button" href="#" onclick="show('popup')" >Button</button>
          <!-- This is what will be included inside the popup -->
          <div class="popup" id="popup">
             <a href="#" onclick="hide('popup')"><i class="fa fa-times" ></i></a>
             <ul >
-               <li>
-                     <a href="/assets/Rohit-shukla-updated-resume-2022.pdf"  class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s" download>Downlaod Resume <i class="fa fa-download"></i></a>			 
-               </li>
+               <li><a target=”_blank” href="https://www.linkedin.com/in/rohitshukla001/"> <i class="fa fa-linkedin fa-2x"></i></a></li>
                <li><a target=”_blank” href="https://github.com/rohitshukla001"><i class="fa fa-github fa-2x"></i></a></li>
                <li><a target=”_blank” href="https://www.hackerrank.com/rohitshukla001"><i class="fa fa-hackerrank fa-2x" style='font-size:48px;color:red'></i></a></li>
             </ul>
          </div>
-                     
                      
                      <a href="/assets/Rohit-shukla-updated-resume-2022.pdf"  class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s" download>Downlaod Resume <i class="fa fa-download"></i></a>			 
                   
@@ -735,6 +733,21 @@
          * JS Files *
          ==============
          -->
+
+		 
+      </style>
+	        <script type="text/javascript">  
+         $ = function(id) {
+         return document.getElementById(id);
+         }
+         
+         var show = function(id) {
+         $(id).style.display ='block';
+         }
+         var hide = function(id) {
+         $(id).style.display ='none';
+         }  
+      </script>  
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <!-- jQuery -->
       <script src="assets/plugins/js/jquery.min.js"></script>

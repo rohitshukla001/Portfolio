@@ -9,6 +9,21 @@ body {
   padding: 8rem 0;
 }
 
+@media (max-width: 576px) {
+  .responsive-video {
+    max-width: 300px;  
+    height: 200px;
+  }
+}
+
+.responsive-video {
+  width: 100%;
+  max-width: 500px;
+  height: auto;  
+  border-radius: 10px;
+}
+
+
 .small-text {
   color: #5b5b5b;
   font-size: 14px;

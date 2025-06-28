@@ -107,13 +107,22 @@ h3 {
 }
 
 .custom-btn.custom-btn-bg {
-  background: #474559;
+  background: linear-gradient(90deg, #1e3a5f, #0a1a2e);
   color: #ffffff;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 13px 29px;
+  font-size: 14px;
+  line-height: normal;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 12px rgba(14, 30, 59, 0.2);
 }
 
 .custom-btn.custom-btn-bg:hover {
-  background: #ffc200;
+  background: linear-gradient(90deg, #0a1a2e, #1e3a5f);
   color: #ffffff !important;
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(14, 30, 59, 0.3);
 }
 
 .animated {
@@ -174,13 +183,16 @@ h3 {
   padding-top: 0;
   padding-bottom: 0;
 }
-
+.color-text{
+  color:#0a1a2e;
+}
 .navbar-brand {
   font-weight: bold;
 }
 
 .navbar-expand-sm .navbar-nav .nav-link {
   padding: 0 20px;
+  color:#0a1a2e;
 }
 
 .nav-link {

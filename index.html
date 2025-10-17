@@ -614,7 +614,8 @@
                                 </div>
                                 <div class="ml-lg-auto col-lg-5 col-12">
                                     <a href="#" class="btn btn-primary btn-lg form-control submit-btn disabled"
-                                        role="button" aria-disabled="true">Send</a>
+                                        role="button" aria-disabled="true" data-toggle="tooltip" data-placement="top"
+                                        title="Work in progress">Send</a>
                                 </div>
                                 <div class="text-left ml-3">
                                     <p>
@@ -657,6 +658,9 @@
             } else {
                 navbar.classList.remove('scrolled');
             }
+        });
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
         });
         // Initialize Swiper for Projects
         new Swiper('#project .swiper', {

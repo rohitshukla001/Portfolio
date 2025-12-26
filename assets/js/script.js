@@ -1,16 +1,3 @@
-/**
- * Portfolio Website - Consolidated JavaScript
- * Author: Rohit Shukla
- * Description: All custom scripts for portfolio functionality
- * 
- * Contents:
- * 1. EmailJS Initialization
- * 2. Navbar Scroll Effect
- * 3. Bootstrap Tooltips
- * 4. Swiper Carousel Initialization
- * 5. Contact Form Submission
- */
-
 /* ==========================================================================
    1. EMAILJS INITIALIZATION
    ========================================================================== */
@@ -113,10 +100,25 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     // Send email using EmailJS
     emailjs.send("rohitvendasta@gmail.com", "template_euenjja", formData)
         .then(function (response) {
-            formMessage.innerHTML = '<span style="color: #28a745; font-weight: bold;">✓ Message sent successfully! I\'ll get back to you soon.</span>';
             document.getElementById('contactForm').reset();
             submitBtn.disabled = false;
             submitBtn.textContent = originalBtnText;
+            
+            // Start countdown timer
+            let countdown = 10;
+            formMessage.innerHTML = '<span style="color: #28a745; font-weight: bold;">✓ Message sent successfully! I\'ll get back to you soon. <span id="countdown">(' + countdown + 's)</span></span>';
+            
+            const countdownInterval = setInterval(function() {
+                countdown--;
+                const countdownEl = document.getElementById('countdown');
+                if (countdown > 0 && countdownEl) {
+                    countdownEl.textContent = '(' + countdown + 's)';
+                } else {
+                    clearInterval(countdownInterval);
+                    formMessage.innerHTML = '';
+                }
+            }, 1000);
+            
         }, function (error) {
             formMessage.innerHTML = '<span style="color: #dc3545; font-weight: bold;">✗ Failed to send message. Please try again or email me directly.</span>';
             submitBtn.disabled = false;

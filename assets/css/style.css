@@ -496,29 +496,28 @@ h3 {
     border-color: #ffc200;
 }
 
-.contact-form .submit-btn {
-    background: #ffc200;
-    border-radius: 50px;
-    color: #ffffff;
-    font-weight: bold;
-    border: 0;
-    cursor: pointer;
-    transition: all 0.4s ease;
+.contact-form button[type="submit"] {
+    width: 100%;
+    padding: 15px 29px;
+    font-size: 16px;
 }
 
-.contact-form .submit-btn:hover {
-    background: #474559;
-}
-
-.contact-form .submit-btn:disabled {
-    background: #ccc;
+.contact-form button[type="submit"]:disabled {
+    background: #ccc !important;
     cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
 }
 
 #formMessage {
     font-size: 14px;
     margin-top: 10px;
     text-align: center;
+}
+
+#countdown {
+    font-weight: normal;
+    opacity: 0.8;
 }
 
 .google-map iframe {

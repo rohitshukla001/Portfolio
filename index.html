@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <!-- Custom Styles (Single consolidated file) -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -598,24 +600,27 @@
                 <div class="col-lg-6 col-12">
                     <div class="color-text contact-form">
                         <h3 class="mb-4">Interested to work together? Let's talk</h3>
-                        <form action="" method="get">
+                        <form id="contactForm">
                             <div class="row">
                                 <div class="col-lg-6 col-12">
                                     <input type="text" class="form-control" name="name" placeholder="Your Name"
-                                        id="name">
+                                        id="contactName" required>
                                 </div>
                                 <div class="col-lg-6 col-12">
                                     <input type="email" class="form-control" name="email" placeholder="Email"
-                                        id="email">
+                                        id="contactEmail" required>
                                 </div>
                                 <div class="col-12">
-                                    <textarea name="message" rows="6" class="form-control" id="message"
-                                        placeholder="Message"></textarea>
+                                    <textarea name="message" rows="6" class="form-control" id="contactMessage"
+                                        placeholder="Message" required></textarea>
                                 </div>
                                 <div class="ml-lg-auto col-lg-5 col-12">
-                                    <a href="#" class="btn btn-primary btn-lg form-control submit-btn disabled"
-                                        role="button" aria-disabled="true" data-toggle="tooltip" data-placement="top"
-                                        title="Work in progress">Send</a>
+                                    <button type="submit" class="btn btn-primary btn-lg form-control submit-btn">
+                                        Send Message
+                                    </button>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <p id="formMessage"></p>
                                 </div>
                                 <div class="text-left ml-3">
                                     <p>

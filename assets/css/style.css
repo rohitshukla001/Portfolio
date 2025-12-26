@@ -1,26 +1,13 @@
-/**
- * Portfolio Website - Consolidated Stylesheet
- * Author: Rohit Shukla
- * Description: All custom styles for portfolio website
- * 
- * Contents:
- * 1. Base Styles & Typography
- * 2. Layout & Utilities
- * 3. Navbar
- * 4. Hero/About Section
- * 5. Animations
- * 6. Timeline (Experience/Education)
- * 7. Project Cards & Swiper
- * 8. Contact Form
- * 9. Footer
- * 10. Responsive Styles
- */
-
 /* ==========================================================================
    1. BASE STYLES & TYPOGRAPHY
    ========================================================================== */
 
 @import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,700");
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
 
 body {
     font-family: 'Maven Pro', sans-serif;
@@ -520,8 +507,21 @@ h3 {
     opacity: 0.8;
 }
 
-.google-map iframe {
+.google-map {
+    position: relative;
     width: 100%;
+    padding-bottom: 75%; /* 4:3 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.google-map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0;
 }
 
 /* ==========================================================================
@@ -607,6 +607,178 @@ h3 {
     }
 
     .swiper-slide p {
+        font-size: 14px;
+    }
+}
+
+/* ==========================================================================
+   11. MOBILE RESPONSIVE FIXES
+   ========================================================================== */
+
+/* Ensure all images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix container width on mobile */
+.container {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Fix row overflow */
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.row > [class*="col-"] {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Timeline responsive fixes */
+@media (max-width: 768px) {
+    .timeline-info {
+        max-width: 100%;
+        margin-left: 5em;
+    }
+    
+    .timeline-yr {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+    }
+    
+    .timeline-yr span {
+        font-size: 14px;
+        line-height: 60px;
+    }
+    
+    .timeline-wrapper:before {
+        left: 28px;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Full screen section padding */
+    .full-screen {
+        padding: 4rem 0;
+    }
+    
+    /* Fix hero section container */
+    section.about .container {
+        width: 100% !important;
+        padding: 0 15px;
+    }
+    
+    /* Timeline for small screens */
+    .timeline-info {
+        margin-left: 4.5em;
+        max-width: calc(100% - 80px);
+    }
+    
+    .timeline-yr {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+    
+    .timeline-yr span {
+        font-size: 12px;
+        line-height: 50px;
+    }
+    
+    .timeline-wrapper:before {
+        left: 23px;
+    }
+    
+    /* Animated text fixes */
+    .animated-info {
+        min-width: 200px;
+    }
+    
+    .animated-item {
+        font-size: 24px !important;
+    }
+    
+    /* Contact form */
+    .contact-form {
+        padding: 0 10px;
+    }
+    
+    /* Google map container */
+    .google-map {
+        padding-bottom: 100%; /* Taller on mobile */
+    }
+    
+    /* Social icons spacing */
+    .social-icons a {
+        margin: 0 3px;
+    }
+    
+    /* Buttons responsive */
+    .custom-btn {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+    
+    .custom-btn.custom-btn-bg {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+    
+    /* Typography adjustments */
+    h2 {
+        font-size: 1.8em;
+    }
+    
+    h3 {
+        font-size: 1.4em;
+    }
+    
+    /* Navbar adjustments */
+    .navbar-collapse {
+        background: #fff;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar-expand-sm .navbar-nav .nav-link {
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small screen adjustments */
+    .timeline-info {
+        margin-left: 4em;
+        max-width: calc(100% - 70px);
+    }
+    
+    .timeline-info h3,
+    .timeline-info h5 {
+        font-size: 1rem;
+    }
+    
+    /* Project section text */
+    .project-info img {
+        max-height: 180px;
+    }
+    
+    /* About section image */
+    .about-image img {
+        max-width: 280px;
+        margin: 20px auto;
+        display: block;
+    }
+    
+    /* Table text in timeline */
+    .timeline-info table td {
         font-size: 14px;
     }
 }

@@ -1,3 +1,21 @@
+/**
+ * Portfolio Website - Consolidated Stylesheet
+ * Author: Rohit Shukla
+ * Description: All custom styles for portfolio website
+ * 
+ * Contents:
+ * 1. Base Styles & Typography
+ * 2. Layout & Utilities
+ * 3. Navbar
+ * 4. Hero/About Section
+ * 5. Animations
+ * 6. Timeline (Experience/Education)
+ * 7. Project Cards & Swiper
+ * 8. Contact Form
+ * 9. Footer
+ * 10. Responsive Styles
+ */
+
 /* ==========================================================================
    1. BASE STYLES & TYPOGRAPHY
    ========================================================================== */
@@ -66,6 +84,12 @@ h3 {
 
 .full-screen {
     padding: 8rem 0;
+}
+
+/* Hero/About section container - natural width on desktop */
+section.about .container {
+    max-width: 80%;
+    margin: 0 auto;
 }
 
 .color-text {
@@ -641,6 +665,75 @@ img {
 
 /* Timeline responsive fixes */
 @media (max-width: 768px) {
+    /* Hero section - full width on tablet/mobile */
+    section.about .container {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    
+    /* About Me section - center content on mobile */
+    section.about .row {
+        text-align: center;
+    }
+    
+    section.about .about-text {
+        text-align: center;
+    }
+    
+    section.about .about-text table {
+        margin: 0 auto;
+        text-align: left;
+    }
+    
+    section.about .social-icons {
+        justify-content: center;
+    }
+    
+    section.about .custom-btn-group {
+        text-align: center;
+    }
+    
+    /* About image centering */
+    section.about .about-image {
+        text-align: center;
+        margin-top: 30px;
+    }
+    
+    section.about .about-image img {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    /* Project/Resume sections - center on mobile */
+    .project .row,
+    .resume .row {
+        text-align: center;
+    }
+    
+    .project .item .row {
+        flex-direction: column;
+    }
+    
+    .project .item .row .col-sm-6,
+    .project .item .row .col-sm {
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .project .item .text-left {
+        text-align: center !important;
+    }
+    
+    .project .project-info {
+        text-align: center;
+    }
+    
+    .project .project-info img {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
     .timeline-info {
         max-width: 100%;
         margin-left: 5em;
@@ -670,8 +763,24 @@ img {
     
     /* Fix hero section container */
     section.about .container {
+        max-width: 100% !important;
         width: 100% !important;
         padding: 0 15px;
+    }
+    
+    /* About section - center everything on small mobile */
+    section.about .about-image img {
+        max-width: 250px;
+    }
+    
+    /* Animated text - center and adjust */
+    section.about .animated {
+        justify-content: center;
+    }
+    
+    section.about .animated-info {
+        min-width: auto;
+        width: 100%;
     }
     
     /* Timeline for small screens */

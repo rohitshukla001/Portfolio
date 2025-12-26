@@ -510,6 +510,17 @@ h3 {
     background: #474559;
 }
 
+.contact-form .submit-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+#formMessage {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
 .google-map iframe {
     width: 100%;
 }

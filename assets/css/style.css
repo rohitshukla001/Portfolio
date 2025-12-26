@@ -1,21 +1,3 @@
-/**
- * Portfolio Website - Consolidated Stylesheet
- * Author: Rohit Shukla
- * Description: All custom styles for portfolio website
- * 
- * Contents:
- * 1. Base Styles & Typography
- * 2. Layout & Utilities
- * 3. Navbar
- * 4. Hero/About Section
- * 5. Animations
- * 6. Timeline (Experience/Education)
- * 7. Project Cards & Swiper
- * 8. Contact Form
- * 9. Footer
- * 10. Responsive Styles
- */
-
 /* ==========================================================================
    1. BASE STYLES & TYPOGRAPHY
    ========================================================================== */
@@ -84,12 +66,6 @@ h3 {
 
 .full-screen {
     padding: 8rem 0;
-}
-
-/* All sections - natural width on desktop */
-section .container {
-    max-width: 80%;
-    margin: 0 auto;
 }
 
 .color-text {
@@ -692,6 +668,12 @@ img {
         padding: 4rem 0;
     }
     
+    /* Fix hero section container */
+    section.about .container {
+        width: 100% !important;
+        padding: 0 15px;
+    }
+    
     /* Timeline for small screens */
     .timeline-info {
         margin-left: 4.5em;
@@ -722,9 +704,19 @@ img {
         font-size: 24px !important;
     }
     
+    /* Contact form */
+    .contact-form {
+        padding: 0 10px;
+    }
+    
     /* Google map container */
     .google-map {
         padding-bottom: 100%; /* Taller on mobile */
+    }
+    
+    /* Social icons spacing */
+    .social-icons a {
+        margin: 0 3px;
     }
     
     /* Buttons responsive */

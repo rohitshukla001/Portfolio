@@ -32,6 +32,18 @@
        padding-top: 70px;
    }
    
+   /* Ensure Maven Pro font family is used everywhere */
+   * {
+       font-family: 'Maven Pro', sans-serif;
+   }
+   
+   h1, h2, h3, h4, h5, h6,
+   p, a, span, li, td, th,
+   input, textarea, select, button,
+   label, .btn, .nav-link {
+       font-family: 'Maven Pro', sans-serif;
+   }
+   
    ul {
        margin: 0;
        padding: 0;
@@ -52,13 +64,13 @@
    }
    
    p {
-       font-size: 18px;
+       font-size: 16px;
        font-weight: 300;
        line-height: 1.5;
-       color: #5b5b5b;
+       color: #212121;
    }
    
-   h1, h2, h3, h5 {
+   h1, h2, h3, h4, h5 {
        font-weight: bold;
        letter-spacing: -1px;
    }
@@ -71,11 +83,22 @@
    
    h2 {
        color: #353535;
-       font-size: 2.4em;
+       font-size: 25px;
    }
    
    h3 {
-       color: #484848;
+       color: #212121;
+       font-size: 25px;
+   }
+   
+   h4 {
+       color: #212121;
+       font-size: 20px;
+   }
+   
+   h5 {
+       color: #212121;
+       font-size: 20px;
    }
    
 /* ==========================================================================
@@ -157,8 +180,8 @@ section.project .item .row > [class*="col-"],
    }
    
    .small-text {
-       color: #5b5b5b;
-       font-size: 14px;
+       color: #212121;
+       font-size: 16px;
        font-weight: bold;
        padding: 8px 16px;
        border-radius: 50px;
@@ -207,6 +230,15 @@ section.project .item .row > [class*="col-"],
        font-weight: bold;
        font-size: 16px;
        overflow: hidden;
+   }
+   
+   /* Base text size for all normal text */
+   body {
+       font-size: 16px;
+   }
+   
+   td, th, li, span, label, input, textarea, select {
+       font-size: 16px;
    }
    
    .nav-link span {
@@ -319,38 +351,30 @@ section.about .col-lg-5 {
        transform: scale(1.5);
    }
    
-   /* Custom Buttons */
+   /* Custom Button - Single unified class */
    .custom-btn {
-       background: #eee;
-       color: #5b5b5b;
+       display: inline-block;
+       width: auto;
+       height: 40px;
+       padding: 0 20px;
+       font-size: 16px;
        font-weight: bold;
+       line-height: 38px;
+       text-align: center;
+       white-space: nowrap;
+       background: linear-gradient(90deg, #1e3a5f, #0a1a2e);
+       color: #ffffff;
+       border: none;
        border-radius: 10px;
-       padding: 13px 29px;
-       font-size: 14px;
-       line-height: normal;
-       transition: all 0.4s ease;
+       box-shadow: 0 4px 12px rgba(14, 30, 59, 0.2);
+       transition: all 0.3s ease;
+       cursor: pointer;
    }
    
    .custom-btn:hover {
-       color: #ffc200;
-   }
-   
-   .custom-btn.custom-btn-bg {
-       background: linear-gradient(90deg, #1e3a5f, #0a1a2e);
-       color: #ffffff;
-       font-weight: bold;
-       border-radius: 12px;
-       padding: 13px 29px;
-       font-size: 14px;
-       line-height: normal;
-       transition: all 0.4s ease;
-       box-shadow: 0 4px 12px rgba(14, 30, 59, 0.2);
-   }
-   
-   .custom-btn.custom-btn-bg:hover {
        background: linear-gradient(90deg, #0a1a2e, #1e3a5f);
        color: #ffffff !important;
-       transform: scale(1.05);
+       transform: scale(1.03);
        box-shadow: 0 6px 16px rgba(14, 30, 59, 0.3);
    }
    
@@ -360,19 +384,25 @@ section.about .col-lg-5 {
    
    .animated {
        position: relative;
+       font-size: 28px;
+   }
+   
+   /* "Hey folks, I'm" text */
+   .animated .mr-2 {
+       font-size: 28px;
    }
    
    .animated-info {
        display: inline-block;
        vertical-align: top;
-       margin-top: 5px;
+       margin-top: 3px;
        min-width: 260px;
        position: relative;
    }
    
    .animated-item {
        color: #ffc200;
-       font-size: 38px;
+       font-size: 28px;
        line-height: inherit;
        display: block;
        opacity: 0;
@@ -485,24 +515,37 @@ section.about .col-lg-5 {
    }
    
    .swiper-slide h3 {
-       font-size: 1.8em;
+       font-size: 25px;
        margin-bottom: 10px;
    }
    
    .swiper-slide h5 {
-       font-size: 1.2em;
-       color: #5b5b5b;
+       font-size: 20px;
+       color: #212121;
        margin-bottom: 15px;
    }
    
    .swiper-slide p {
        font-size: 16px;
        line-height: 1.6;
-       color: #5b5b5b;
+       color: #212121;
    }
    
    .swiper-slide .btn {
        margin-top: 15px;
+   }
+   
+   /* Certificate section - left align text content */
+   #certificate .swiper-slide .color-text,
+   #certificate .swiper-slide .text-left {
+       text-align: left;
+   }
+   
+   #certificate .swiper-slide .color-text h3,
+   #certificate .swiper-slide .color-text h5,
+   #certificate .swiper-slide .color-text table,
+   #certificate .swiper-slide .color-text a {
+       text-align: left;
    }
    
    /* Swiper Pagination */
@@ -585,8 +628,10 @@ section.about .col-lg-5 {
    
    .contact-form button[type="submit"] {
        width: 100%;
-       padding: 15px 29px;
+       height: 48px;
        font-size: 16px;
+       line-height: 48px;
+       padding: 0 24px;
    }
    
    .contact-form button[type="submit"]:disabled {
@@ -632,6 +677,11 @@ section.about .col-lg-5 {
        font-size: 16px;
        font-weight: normal;
        display: block;
+   }
+   
+   /* Ensure all anchor/link text is 16px */
+   a {
+       font-size: 16px;
    }
    
 /* ==========================================================================
@@ -782,7 +832,7 @@ img {
     }
     
     .animated-item {
-        font-size: 26px !important;
+        font-size: 24px !important;
     }
     
     /* Project/Swiper sections */
@@ -945,7 +995,7 @@ img {
     }
     
     .animated-item {
-        font-size: 22px !important;
+        font-size: 20px !important;
     }
     
     /* Timeline compact */
@@ -1022,15 +1072,12 @@ img {
         font-size: 26px;
     }
     
-    /* Buttons */
+    /* Buttons - keep height and font size static */
     .custom-btn {
-        padding: 10px 18px;
-        font-size: 13px;
-    }
-    
-    .custom-btn.custom-btn-bg {
-        padding: 10px 18px;
-        font-size: 13px;
+        height: 34px;
+        padding: 0 18px;
+        font-size: 16px;
+        line-height: 44px;
     }
     
     /* Typography */
@@ -1134,6 +1181,11 @@ img {
         font-size: 18px !important;
     }
     
+    .animated,
+    .animated .mr-2 {
+        font-size: 18px;
+    }
+    
     /* Typography */
     h2 {
         font-size: 1.5em;
@@ -1147,10 +1199,11 @@ img {
         font-size: 14px;
     }
     
-    /* Buttons smaller */
-    .custom-btn,
-    .custom-btn.custom-btn-bg {
-        padding: 8px 14px;
-        font-size: 12px;
+    /* Buttons - keep height and font size static */
+    .custom-btn {
+        height: 32px;
+        padding: 0 16px;
+        font-size: 16px;
+        line-height: 42px;
     }
 }

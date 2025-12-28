@@ -101,21 +101,21 @@
 
 /* Section spacing - consistent vertical rhythm */
 section {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 section.about.full-screen {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 
 /* Override Bootstrap's py-5 for more breathing room */
 section.project,
 section.resume,
 section.contact {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 /* Global container max-width for desktop - prevents content from spreading too wide */
@@ -885,6 +885,17 @@ img {
     .project .project-info {
         text-align: center;
         margin-bottom: 20px;
+    }
+    
+    /* Hide About Me image on mobile */
+    #resume .project-info {
+        display: none;
+    }
+    
+    /* Remove mt-4 margin on mobile for About Me text */
+    #resume .text-left.mt-4,
+    #resume .mt-4 {
+        margin-top: 0 !important;
     }
 
     

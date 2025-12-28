@@ -1,321 +1,319 @@
 /* ==========================================================================
-   1. BASE STYLES & TYPOGRAPHY
+   CSS VARIABLES - Single source of truth
    ========================================================================== */
+:root {
+    /* Colors */
+    --color-primary: #0a1a2e;
+    --color-primary-light: #1e3a5f;
+    --color-accent: #ffc200;
+    --color-accent-dark: #e0a800;
+    --color-text: #212121;
+    --color-text-light: #353535;
+    --color-white: #ffffff;
+    --color-gray: #474559;
+    --color-border: #f0f0f0;
+    
+    /* Typography */
+    --font-family: 'Maven Pro', sans-serif;
+    --font-size-base: 16px;
+    --font-size-sm: 14px;
+    --font-size-lg: 20px;
+    --font-size-xl: 25px;
+    --font-size-xxl: 28px;
+    
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-xxl: 4rem;
+    
+    /* Layout */
+    --container-max: 1000px;
+    --container-wide: 1100px;
+    --container-full: 1200px;
+    --border-radius: 10px;
+    --transition: 0.3s ease;
+    
+    /* Timeline */
+    --timeline-size: 75px;
+    --timeline-bar-left: 38px;
+}
 
-   @import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,700");
-
-   html, body {
-       overflow-x: hidden;
-       max-width: 100%;
-   }
-   
-   body {
-       font-family: 'Maven Pro', sans-serif;
-       padding-top: 70px;
-   }
-   
-   /* Ensure Maven Pro font family is used everywhere */
-   * {
-       font-family: 'Maven Pro', sans-serif;
-   }
-   
-   h1, h2, h3, h4, h5, h6,
-   p, a, span, li, td, th,
-   input, textarea, select, button,
-   label, .btn, .nav-link {
-       font-family: 'Maven Pro', sans-serif;
-   }
-   
-   ul {
-       margin: 0;
-       padding: 0;
-   }
-   
-   ul li {
-       list-style: none;
-   }
-   
-   a {
-       font-weight: normal;
-       text-decoration: none !important;
-       transition: all 0.4s ease;
-   }
-   
-   a:hover {
-       color: #ffc200 !important;
-   }
-   
-   p {
-       font-size: 16px;
-       font-weight: 300;
-       line-height: 1.5;
-       color: #212121;
-   }
-   
-   strong, b {
-       font-weight: 700;
-   }
-   
-   h1, h2, h3, h4, h5 {
-       font-weight: bold;
-       letter-spacing: -1px;
-   }
-   
-   h1 {
-       color: #212121;
-       font-size: 2.8em;
-       margin: 24px 0;
-   }
-   
-   h2 {
-       color: #353535;
-       font-size: 25px;
-   }
-   
-   h3 {
-       color: #212121;
-       font-size: 25px;
-   }
-   
-   h4 {
-       color: #212121;
-       font-size: 20px;
-   }
-   
-   h5 {
-       color: #212121;
-       font-size: 20px;
-   }
-   
 /* ==========================================================================
-   2. LAYOUT & UTILITIES
+   RESET & BASE
    ========================================================================== */
+@import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,700");
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Apply Maven Pro to all text elements */
+body,
+h1, h2, h3, h4, h5, h6,
+p, a, span:not([class*="fa"]), 
+li, td, th, div,
+input, textarea, select, button,
+label, .btn, .nav-link, .navbar-brand,
+.small-text, .color-text, .copyright-text {
+    font-family: var(--font-family);
+}
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+body {
+    font-size: var(--font-size-base);
+    padding-top: 70px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    font-size: var(--font-size-base);
+    font-weight: normal;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+p {
+    font-size: var(--font-size-base);
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--color-text);
+}
+
+strong, b {
+    font-weight: 700;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: bold;
+    letter-spacing: -1px;
+    color: var(--color-text);
+}
+
+h1 { font-size: 2.8em; margin: 24px 0; }
+h2 { font-size: var(--font-size-xl); }
+h3 { font-size: var(--font-size-xl); }
+h4, h5 { font-size: var(--font-size-lg); }
+
+/* ==========================================================================
+   LAYOUT
+   ========================================================================== */
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.row {
+    margin: 0;
+}
+
+.row > [class*="col-"] {
+    padding: 0 15px;
+}
+
+section {
+    padding: var(--space-xl) 0;
+}
 
 .full-screen {
-    padding: 8rem 0;
+    padding: var(--space-xxl) 0;
+}
+
+/* Section-specific container widths */
+.project .container,
+.resume .container { max-width: var(--container-wide); }
+.contact .container { max-width: var(--container-full); }
+
+/* ==========================================================================
+   UTILITIES
+   ========================================================================== */
+.color-text { color: var(--color-primary); }
+
+.small-text {
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 50px;
 }
 
 .project-info .img-fluid {
     width: 70%;
 }
 
-/* Section spacing - consistent vertical rhythm */
-section {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-}
-
-section.about.full-screen {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-}
-
-/* Override Bootstrap's py-5 for more breathing room */
-section.project,
-section.resume,
-section.contact {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-}
-
-/* Global container max-width for desktop - prevents content from spreading too wide */
-.container {
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Hero/About section - tighter layout */
-section.about .container {
-    max-width: 1000px;
-}
-
-/* Project/Certificate/Hackathon sections - compact content */
-section.project .container {
-    max-width: 1100px;
-}
-
-/* Resume/Experience section - reduce gap between columns */
-section.resume .container {
-    max-width: 1100px;
-}
-
-/* Contact section - tighter layout */
-section.contact .container {
-    max-width: 1200px;
-}
-
-/* Reduce gap between columns in all two-column layouts */
-section.about .row,
-section.project .row,
-section.resume .row,
-section.contact .row {
-    justify-content: center;
-}
-
-/* Tighter column spacing for project/certificate items */
-section.project .item .row,
-.swiper-slide .row {
-    justify-content: center;
-}
-
-/* About Me section image - 400px on desktop */
-section.project .item .project-info img {
-    width: 400px;
-    max-width: 100%;
-}
-
-section.project .item .row > [class*="col-"],
-.swiper-slide .row > [class*="col-"] {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-   
-   .color-text {
-       color: #0a1a2e;
-   }
-   
-   .small-text {
-       color: #212121;
-       font-size: 16px;
-       font-weight: bold;
-       padding: 8px 16px;
-       border-radius: 50px;
-       letter-spacing: 0.2px;
-   }
-   
-   .w-90 {
-       width: 90%;
-   }
-   
-   /* ==========================================================================
-      3. NAVBAR
-      ========================================================================== */
-   
-   .navbar {
-       position: fixed;
-       background-color: #ffffff;
-       top: 0;
-       right: 0;
-       left: 0;
-       z-index: 999999;
-       box-shadow: none;
-   }
-   
-   .navbar.scrolled {
-       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-   }
-   
-   .navbar[class*="headroom--not-top"] {
-       background: #ffffff;
-       border-bottom: 1px solid #f0f0f0;
-       padding-top: 0;
-       padding-bottom: 0;
-   }
-   
-   .navbar-brand {
-       font-weight: bold;
-   }
-   
-   .navbar-expand-sm .navbar-nav .nav-link {
-       padding: 0 20px;
-       color: #0a1a2e;
-   }
-   
-   .nav-link {
-       font-weight: bold;
-       font-size: 16px;
-       overflow: hidden;
-   }
-   
-   /* Base text size for all normal text */
-   body {
-       font-size: 16px;
-   }
-   
-   td, th, li, span, label, input, textarea, select {
-       font-size: 16px;
-   }
-   
-   .nav-link span {
-       position: relative;
-       display: inline-block;
-       transition: transform 0.3s;
-   }
-   
-   .nav-link span:before {
-       position: absolute;
-       top: 100%;
-       content: attr(data-hover);
-       transform: translate3d(0, 0, 0);
-   }
-   
-   .navbar-light .navbar-nav .nav-link:focus,
-   .navbar-light .navbar-nav .nav-link:hover {
-       color: #ffc200;
-       font-weight: bold;
-   }
-   
-   .navbar-light .navbar-nav .nav-link:focus span,
-   .navbar-light .navbar-nav .nav-link:hover span {
-       transform: translateY(-100%);
-   }
-   
-   .navbar-toggler {
-       border: 0;
-       padding: 0;
-       width: 32px;
-       height: 32px;
-       line-height: 32px;
-       outline: none;
-       cursor: pointer;
-       margin-right: 10px;
-   }
-   
-   .navbar-toggler:focus {
-       outline: none;
-   }
-   
-   .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:first-child {
-       transform: rotate(45deg);
-       top: 6px;
-   }
-   
-   .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:nth-child(2) {
-       display: none;
-   }
-   
-   .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:last-child {
-       transform: rotate(-45deg);
-       bottom: 1px;
-   }
-   
-   .navbar-toggler .navbar-toggler-icon {
-       background: #212121;
-       display: block;
-       width: 100%;
-       height: 2px;
-       margin: 5px 0;
-       transition: all 0.4s ease;
-       position: relative;
-   }
-   
 /* ==========================================================================
-   4. HERO/ABOUT SECTION
+   NAVBAR
    ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999999;
+    background: var(--color-white);
+}
 
-/* Hero section - bring content and image closer on desktop */
-section.about > .container > .row {
+.navbar.scrolled {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.nav-link {
+    font-weight: bold;
+    font-size: var(--font-size-base);
+    overflow: hidden;
+}
+
+.navbar-expand-sm .navbar-nav .nav-link {
+    padding: 0 20px;
+    color: var(--color-primary);
+}
+
+.nav-link span {
+    position: relative;
+    display: inline-block;
+}
+
+/* Hover effect only on desktop */
+@media (min-width: 577px) {
+    .nav-link span {
+        transition: transform var(--transition);
+    }
+    
+    .nav-link span::before {
+        position: absolute;
+        top: 100%;
+        content: attr(data-hover);
+    }
+    
+    .navbar-light .navbar-nav .nav-link:hover span {
+        transform: translateY(-100%);
+    }
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: var(--color-accent);
+}
+
+.navbar-toggler {
+    border: 0;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+    background: var(--color-text);
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin: 5px 0;
+    transition: var(--transition);
+    position: relative;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:first-child {
+    transform: rotate(45deg);
+    top: 6px;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:nth-child(2) {
+    display: none;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:last-child {
+    transform: rotate(-45deg);
+    bottom: 1px;
+}
+
+/* Simple navbar collapse - no animations */
+.navbar-collapse {
+    transition: none;
+}
+
+.navbar-collapse.collapsing {
+    display: none;
+    transition: none;
+    height: auto;
+}
+
+.navbar-collapse.collapse:not(.show) {
+    display: none;
+}
+
+.navbar-collapse.collapse.show {
+    display: block;
+}
+
+/* ==========================================================================
+   BUTTON
+   ========================================================================== */
+.custom-btn {
+    display: inline-block;
+    height: 40px;
+    padding: 0 20px;
+    font-size: var(--font-size-base);
+    font-weight: bold;
+    line-height: 38px;
+    text-align: center;
+    white-space: nowrap;
+    background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary));
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(14, 30, 59, 0.2);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.custom-btn:hover {
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+    color: var(--color-white);
+    transform: scale(1.03);
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.about .container > .row {
     justify-content: center;
     gap: 20px;
 }
 
-section.about .col-lg-7 {
+.about .col-lg-7 {
     flex: 0 0 55%;
     max-width: 55%;
 }
 
-section.about .col-lg-5 {
+.about .col-lg-5 {
     flex: 0 0 40%;
     max-width: 40%;
 }
@@ -323,904 +321,419 @@ section.about .col-lg-5 {
 .social-icons {
     padding-top: 20px;
 }
-   
-   .social-icons a {
-       color: #111A2C;
-       line-height: 30px;
-       font-size: 30px;
-       margin: 0 5px;
-       text-decoration: none;
-   }
-   
-   .social-icons a i,
-   .social-icons a img {
-       line-height: 30px;
-       font-size: 30px;
-       transition: all 200ms ease-in;
-       transform: scale(1);
-   }
-   
-   .social-icons a:hover i,
-   .social-icons a:hover img {
-       box-shadow: 0px 0px 150px #000000;
-       transition: all 200ms ease-in;
-       transform: scale(1.5);
-   }
-   
-   /* Custom Button - Single unified class */
-   .custom-btn {
-       display: inline-block;
-       width: auto;
-       height: 40px;
-       padding: 0 20px;
-       font-size: 16px;
-       font-weight: bold;
-       line-height: 38px;
-       text-align: center;
-       white-space: nowrap;
-       background: linear-gradient(90deg, #1e3a5f, #0a1a2e);
-       color: #ffffff;
-       border: none;
-       border-radius: 10px;
-       box-shadow: 0 4px 12px rgba(14, 30, 59, 0.2);
-       transition: all 0.3s ease;
-       cursor: pointer;
-   }
-   
-   .custom-btn:hover {
-       background: linear-gradient(90deg, #0a1a2e, #1e3a5f);
-       color: #ffffff !important;
-       transform: scale(1.03);
-       box-shadow: 0 6px 16px rgba(14, 30, 59, 0.3);
-   }
-   
-   /* ==========================================================================
-      5. ANIMATIONS
-      ========================================================================== */
-   
-   .animated {
-       position: relative;
-       font-size: 28px;
-   }
-   
-   /* "Hey folks, I'm" text */
-   .animated .mr-2 {
-       font-size: 28px;
-   }
-   
-   .animated-info {
-       display: inline-block;
-       vertical-align: top;
-       margin-top: 3px;
-       min-width: 260px;
-       position: relative;
-   }
-   
-   .animated-item {
-       color: #ffc200;
-       font-size: 28px;
-       line-height: inherit;
-       display: block;
-       opacity: 0;
-       overflow: hidden;
-       position: absolute;
-       top: 0;
-       right: 0;
-       left: 0;
-       animation: BottomTotop 6s linear infinite 0s;
-   }
-   
-   .animated-item:nth-child(2n+2) {
-       animation-delay: 2s;
-   }
-   
-   @keyframes BottomTotop {
-       0% { opacity: 0; }
-       5% { opacity: 0; transform: translateY(5px); }
-       10% { opacity: 1; transform: translateY(0px); }
-       25% { opacity: 1; transform: translateY(0px); }
-       30% { opacity: 0; transform: translateY(5px); }
-       80% { opacity: 0; }
-       100% { opacity: 0; }
-   }
-   
-   /* ==========================================================================
-      6. TIMELINE (Experience/Education)
-      ========================================================================== */
-   
-   .timeline-wrapper {
-       position: relative;
-       padding: 22px 0;
-   }
-   
-   .timeline-wrapper:last-child:before {
-       height: 0;
-   }
-   
-   .timeline-wrapper:before {
-       content: "";
-       background: #474559;
-       width: 3px;
-       height: 100%;
-       position: absolute;
-       left: 38px;
-   }
-   
-   .timeline-yr {
-       background: #474559;
-       border-radius: 100%;
-       position: absolute;
-       width: 75px;
-       height: 75px;
-       line-height: 75px;
-       text-align: center;
-   }
-   
-   .timeline-yr span {
-       color: #ffffff;
-       font-size: 16px;
-       font-weight: bold;
-       display: block;
-       line-height: 75px;
-   }
-   
-   .timeline-info {
-       display: inline-block;
-       vertical-align: top;
-       max-width: 432px;
-       margin-left: 6em;
-   }
-   
-   /* ==========================================================================
-      7. PROJECT CARDS & SWIPER
-      ========================================================================== */
-   
-   .swiper {
-       width: 100%;
-       padding-bottom: 50px;
-       position: relative;
-   }
-   
-   .swiper-slide {
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       background: #fff;
-       border-radius: 10px;
-       transition: transform 0.2s ease;
-   }
-   
-   .swiper-slide:hover {
-       transform: translateY(-5px);
-   }
-   
-   .swiper-slide .container {
-       padding: 20px;
-   }
-   
-   .swiper-slide img {
-       width: 100%;
-       height: auto;
-       border-radius: 8px;
-       object-fit: cover;
-       max-height: 300px;
-   }
-   
-   .swiper-slide .text-left {
-       padding: 20px;
-   }
-   
-   .swiper-slide h3 {
-       font-size: 25px;
-       margin-bottom: 10px;
-   }
-   
-   .swiper-slide h5 {
-       font-size: 20px;
-       color: #212121;
-       margin-bottom: 15px;
-   }
-   
-   .swiper-slide p {
-       font-size: 16px;
-       line-height: 1.6;
-       color: #212121;
-   }
-   
-   .swiper-slide .btn {
-       margin-top: 15px;
-   }
-   
-   /* Certificate section - left align text content */
-   #certificate .swiper-slide .color-text,
-   #certificate .swiper-slide .text-left {
-       text-align: left;
-   }
-   
-   #certificate .swiper-slide .color-text h3,
-   #certificate .swiper-slide .color-text h5,
-   #certificate .swiper-slide .color-text table,
-   #certificate .swiper-slide .color-text a {
-       text-align: left;
-   }
-   
-   /* Swiper Pagination */
-   .swiper-pagination {
-       position: relative;
-       bottom: 10px;
-   }
-   
-   .swiper-pagination-bullet {
-       width: 10px;
-       height: 10px;
-       background: #D6D6D6;
-       opacity: 0.7;
-       transition: all 0.3s ease;
-   }
-   
-   .swiper-pagination-bullet-active {
-       background: #ffc200;
-       opacity: 1;
-   }
-   
-   /* Swiper Navigation Arrows */
-   .swiper-button-prev,
-   .swiper-button-next {
-       background-color: #ffc200;
-       color: #fff;
-       width: 45px;
-       height: 45px;
-       border-radius: 50%;
-       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-       top: 80%;
-       transform: translateY(-50%);
-       z-index: 10;
-       transition: all 0.3s ease;
-   }
-   
-   .swiper-button-prev {
-       left: 10px;
-   }
-   
-   .swiper-button-next {
-       right: 10px;
-   }
-   
-   .swiper-button-prev:hover,
-   .swiper-button-next:hover {
-       background-color: #e0a800;
-       transform: scale(1.1) translateY(-50%);
-   }
-   
-   /* Responsive Video */
-   .responsive-video {
-       width: 100%;
-       max-width: 500px;
-       height: auto;
-       border-radius: 10px;
-   }
-   
-   /* ==========================================================================
-      8. CONTACT FORM
-      ========================================================================== */
-   
-   .contact-form .form-control {
-       background: transparent;
-       border-radius: 2px;
-       outline: none;
-       box-shadow: none;
-       font-weight: bold;
-       margin: 16px 0;
-   }
-   
-   .contact-form .form-control:not(textarea) {
-       height: 48px;
-   }
-   
-   .contact-form .form-control:hover,
-   .contact-form .form-control:focus {
-       border-color: #ffc200;
-   }
-   
-   .contact-form button[type="submit"] {
-       width: 100%;
-       height: 48px;
-       font-size: 16px;
-       line-height: 48px;
-       padding: 0 24px;
-   }
-   
-   .contact-form button[type="submit"]:disabled {
-       background: #ccc !important;
-       cursor: not-allowed;
-       transform: none !important;
-       box-shadow: none !important;
-   }
-   
-   #formMessage {
-       font-size: 14px;
-       margin-top: 10px;
-       text-align: center;
-   }
-   
-   #countdown {
-       font-weight: normal;
-       opacity: 0.8;
-   }
-   
-   .google-map {
-       position: relative;
-       width: 100%;
-       padding-bottom: 75%; /* 4:3 Aspect Ratio */
-       height: 0;
-       overflow: hidden;
-   }
-   
-   .google-map iframe {
-       position: absolute;
-       top: 0;
-       left: 0;
-       width: 100% !important;
-       height: 100% !important;
-       border: 0;
-   }
-   
-   /* ==========================================================================
-      9. FOOTER
-      ========================================================================== */
-   
-   .copyright-text {
-       font-size: 16px;
-       font-weight: normal;
-       display: block;
-   }
-   
-   /* Ensure all anchor/link text is 16px */
-   a {
-       font-size: 16px;
-   }
-   
+
+.social-icons a {
+    color: var(--color-primary);
+    font-size: 30px;
+    margin: 0 5px;
+}
+
+.social-icons a i,
+.social-icons a img {
+    font-size: 30px;
+    transition: all 200ms ease-in;
+}
+
+.social-icons a:hover i,
+.social-icons a:hover img {
+    transform: scale(1.5);
+}
+
 /* ==========================================================================
-   10. RESPONSIVE STYLES - MOBILE FIRST APPROACH
+   ANIMATED TEXT
    ========================================================================== */
-
-/* Ensure all images are responsive */
-img {
-    max-width: 100%;
-    height: auto;
+.animated {
+    position: relative;
+    font-size: var(--font-size-xxl);
 }
 
-/* Container base padding */
-.container {
-    padding-left: 10px;
-    padding-right: 10px;
+.animated .mr-2 {
+    font-size: var(--font-size-xxl);
 }
 
-/* Fix row overflow */
-.row {
-    margin-left: 0;
-    margin-right: 0;
+.animated-info {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 3px;
+    min-width: 260px;
+    position: relative;
 }
 
-.row > [class*="col-"] {
-    padding-left: 15px;
-    padding-right: 15px;
+.animated-item {
+    color: var(--color-accent);
+    font-size: var(--font-size-xxl);
+    line-height: inherit;
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    animation: fadeSlide 6s linear infinite;
+}
+
+.animated-item:nth-child(2n+2) {
+    animation-delay: 2s;
+}
+
+@keyframes fadeSlide {
+    0%, 5% { opacity: 0; transform: translateY(5px); }
+    10%, 25% { opacity: 1; transform: translateY(0); }
+    30%, 100% { opacity: 0; transform: translateY(5px); }
 }
 
 /* ==========================================================================
-   TABLET (max-width: 991px)
+   TIMELINE
+   ========================================================================== */
+.timeline-wrapper {
+    position: relative;
+    padding: 22px 0;
+}
+
+.timeline-wrapper::before {
+    content: "";
+    background: var(--color-gray);
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    left: var(--timeline-bar-left);
+}
+
+.timeline-wrapper:last-child::before {
+    height: 0;
+}
+
+.timeline-yr {
+    background: var(--color-gray);
+    border-radius: 50%;
+    position: absolute;
+    width: var(--timeline-size);
+    height: var(--timeline-size);
+    line-height: var(--timeline-size);
+    text-align: center;
+}
+
+.timeline-yr span {
+    color: var(--color-white);
+    font-size: var(--font-size-base);
+    font-weight: bold;
+    display: block;
+    line-height: var(--timeline-size);
+}
+
+.timeline-info {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 432px;
+    margin-left: 6em;
+}
+
+/* ==========================================================================
+   SWIPER / PROJECT CARDS
+   ========================================================================== */
+.swiper {
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    transition: transform 0.2s ease;
+}
+
+.swiper-slide:hover {
+    transform: translateY(-5px);
+}
+
+.swiper-slide .container {
+    padding: 20px;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    max-height: 300px;
+}
+
+.swiper-slide .text-left {
+    padding: 20px;
+}
+
+.swiper-slide h3 { font-size: var(--font-size-xl); margin-bottom: 10px; }
+.swiper-slide h5 { font-size: var(--font-size-lg); color: var(--color-text); margin-bottom: 15px; }
+.swiper-slide p { font-size: var(--font-size-base); line-height: 1.6; }
+.swiper-slide .btn { margin-top: 15px; }
+
+.swiper-pagination { position: relative; bottom: 10px; }
+.swiper-pagination-bullet { width: 10px; height: 10px; background: #D6D6D6; opacity: 0.7; }
+.swiper-pagination-bullet-active { background: var(--color-accent); opacity: 1; }
+
+.swiper-button-prev,
+.swiper-button-next {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    top: 80%;
+    transform: translateY(-50%);
+    transition: var(--transition);
+}
+
+.swiper-button-prev { left: 10px; }
+.swiper-button-next { right: 10px; }
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: var(--color-accent-dark);
+    transform: scale(1.1) translateY(-50%);
+}
+
+/* Project items */
+.project .item .row { justify-content: center; }
+.project .item .project-info img { width: 400px; max-width: 100%; }
+
+#certificate .swiper-slide .color-text,
+#certificate .swiper-slide .text-left { text-align: left; }
+
+.responsive-video {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
+/* ==========================================================================
+   CONTACT FORM
+   ========================================================================== */
+.contact-form .form-control {
+    background: transparent;
+    border-radius: 2px;
+    font-weight: bold;
+    margin: 16px 0;
+}
+
+.contact-form .form-control:not(textarea) {
+    height: 48px;
+}
+
+.contact-form .form-control:hover,
+.contact-form .form-control:focus {
+    border-color: var(--color-accent);
+    outline: none;
+    box-shadow: none;
+}
+
+.contact-form button[type="submit"] {
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+}
+
+.contact-form button[type="submit"]:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+#formMessage {
+    font-size: var(--font-size-sm);
+    margin-top: 10px;
+    text-align: center;
+}
+
+.google-map {
+    position: relative;
+    width: 100%;
+    padding-bottom: 75%;
+    height: 0;
+    overflow: hidden;
+}
+
+.google-map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.copyright-text {
+    font-size: var(--font-size-base);
+    display: block;
+}
+
+/* ==========================================================================
+   RESPONSIVE - TABLET (max-width: 991px)
    ========================================================================== */
 @media (max-width: 991px) {
-    /* Section padding - normal spacing */
-    section {
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
+    :root {
+        --timeline-size: 60px;
+        --timeline-bar-left: 28px;
     }
     
-    section.about.full-screen {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-    }
+    section { padding: var(--space-md) 0; }
+    .full-screen { padding: var(--space-lg) 0; }
     
-    /* All containers full width on tablet */
-    .container,
-    section.about .container,
-    section.project .container,
-    section.resume .container,
-    section.contact .container {
-        max-width: 100%;
-        padding-left: 12px;
-        padding-right: 12px;
-    }
+    .container { max-width: 100%; padding: 0 12px; }
     
-    /* Swiper adjustments */
-    .swiper-slide .container {
-        padding: 15px;
-    }
-
-    .swiper-slide img {
-        max-height: 250px;
-    }
-
-    .swiper-button-prev,
-    .swiper-button-next {
-        width: 40px;
-        height: 40px;
-    }
-
-    .swiper-button-prev::after,
-    .swiper-button-next::after {
-        font-size: 18px;
-        font-weight: bold;
-    }
+    .swiper-slide .container { padding: 15px; }
+    .swiper-slide img { max-height: 250px; }
+    .swiper-button-prev, .swiper-button-next { width: 40px; height: 40px; }
 }
 
 /* ==========================================================================
-   MOBILE (max-width: 768px)
+   RESPONSIVE - MOBILE (max-width: 768px)
    ========================================================================== */
 @media (max-width: 768px) {
-    /* Section padding - normal spacing */
-    section {
-        padding-top: 1.25rem;
-        padding-bottom: 1.25rem;
-    }
+    section { padding: var(--space-sm) 0; }
+    .full-screen { padding: var(--space-md) 0; }
     
-    .full-screen {
-        padding: 1.5rem 0;
-    }
+    /* Hero - stack and left align */
+    .about .col-lg-7, .about .col-lg-5 { flex: 0 0 100%; max-width: 100%; }
+    .about .container > .row { flex-direction: column-reverse; gap: 0; }
+    .about .row { text-align: left; }
+    .about .about-text { text-align: left; }
+    .about .social-icons { justify-content: flex-start; display: flex; }
+    .about .custom-btn-group { text-align: left; }
+    .about .about-image { text-align: center; margin-bottom: 25px; }
+    .about .about-image img { max-width: 220px; margin: 0 auto; }
     
-    /* Reset desktop column constraints */
-    section.about .col-lg-7,
-    section.about .col-lg-5 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
+    /* Animated text */
+    .animated { justify-content: flex-start; flex-wrap: wrap; }
+    .animated-info { min-width: 100%; text-align: left; }
+    .animated-item { font-size: 24px; text-align: left; }
     
-    /* Hero section row - stack vertically */
-    section.about > .container > .row {
-        flex-direction: column-reverse;
-        gap: 0;
-    }
+    /* Swiper */
+    .swiper-slide .row { flex-direction: column; text-align: center; }
+    .swiper-slide .text-left { text-align: center; padding: 15px 10px; }
+    .swiper-slide img { max-height: 200px; margin: 0 auto; }
+    .swiper-button-prev, .swiper-button-next { display: none; }
     
-    /* Hero - left align all content on mobile */
-    section.about .row {
-        text-align: left;
-    }
-    
-    section.about .about-text {
-        text-align: left;
-    }
-    
-    section.about .about-text table {
-        margin: 0;
-        text-align: left;
-    }
-    
-    section.about .social-icons {
-        justify-content: flex-start;
-        display: flex;
-    }
-    
-    section.about .custom-btn-group {
-        text-align: left;
-    }
-    
-    /* Hero image */
-    section.about .about-image {
-        text-align: center;
-        margin-bottom: 25px;
-    }
-    
-    section.about .about-image img {
-        max-width: 220px;
-        margin: 0 auto;
-    }
-    
-    /* Animated text - left align */
-    .animated {
-        justify-content: flex-start;
-        flex-wrap: wrap;
-    }
-    
-    .animated-info {
-        min-width: 100%;
-        text-align: left;
-    }
-    
-    .animated-item {
-        font-size: 24px !important;
-        text-align: left;
-    }
-    
-    /* Project/Swiper sections */
-    .swiper-slide .row {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .swiper-slide .text-left {
-        text-align: center;
-        padding: 15px 10px;
-    }
-
-    .swiper-slide img {
-        max-height: 200px;
-        margin: 0 auto;
-    }
-
-    .swiper-button-prev,
-    .swiper-button-next {
-        display: none;
-    }
-    
-    /* Project items - stack and center */
-    .project .item .row {
-        flex-direction: column;
-    }
-    
-    .project .item .row .col-sm-6,
-    .project .item .row .col-sm {
+    /* Project items */
+    .project .item .row { flex-direction: column; }
+    .project .item .row .col-sm-6, .project .item .row .col-sm {
         text-align: center;
         width: 100%;
         max-width: 100%;
-        flex: 0 0 100%;
-        padding-left: 0;
-        padding-right: 0;
+        padding: 0;
         margin-top: 4px;
     }
+    .project .item .text-left { text-align: center; margin-top: 4px; }
+    .project .project-info { text-align: center; margin-bottom: 20px; }
     
-    /* Remove side padding from col-sm columns on mobile */
-    .col-sm,
-    .col-sm-6,
-    [class*="col-sm"] {
-        padding-left: 0;
-        padding-right: 0;
-    }
+    /* Hide About Me image */
+    #resume .project-info { display: none; }
+    #resume .mt-4 { margin-top: 0; }
     
-    .project .item .text-left {
-        text-align: center !important;
-        margin-top: 4px;
-    }
+    /* Resume */
+    .resume .row { flex-direction: column; }
+    .resume .col-lg-6 { flex: 0 0 100%; max-width: 100%; margin-bottom: var(--space-lg); }
+    .resume .col-lg-6:last-child { margin-bottom: 0; }
+    .resume h3 { text-align: center; }
     
-    .project .project-info {
-        text-align: center;
-        margin-bottom: 20px;
-    }
+    /* Timeline */
+    .timeline-info { max-width: calc(100% - 90px); margin-left: 5em; }
+    .timeline-yr { width: 60px; height: 60px; line-height: 60px; }
+    .timeline-yr span { font-size: 14px; line-height: 60px; }
+    .timeline-wrapper::before { left: 28px; }
     
-    /* Hide About Me image on mobile */
-    #resume .project-info {
-        display: none;
-    }
+    /* Contact */
+    .contact .row { flex-direction: column; }
+    .contact .col-lg-5, .contact .col-lg-6 { flex: 0 0 100%; max-width: 100%; }
+    .contact .col-lg-5 { margin-bottom: var(--space-lg); }
+    .google-map { padding-bottom: 60%; margin-bottom: var(--space-sm); }
+    .contact-form h3 { text-align: center; }
     
-    /* Remove mt-4 margin on mobile for About Me text */
-    #resume .text-left.mt-4,
-    #resume .mt-4 {
-        margin-top: 0 !important;
-    }
-
-    
-    /* Resume section - stack columns */
-    section.resume .row {
-        flex-direction: column;
-    }
-    
-    section.resume .col-lg-6 {
-        flex: 0 0 100%;
-        max-width: 100%;
-        margin-bottom: 2rem;
-    }
-    
-    section.resume .col-lg-6:last-child {
-        margin-bottom: 0;
-    }
-    
-    /* Timeline adjustments */
-    .timeline-info {
-        max-width: calc(100% - 90px);
-        margin-left: 5em;
-    }
-    
-    .timeline-yr {
-        width: 60px;
-        height: 60px;
-        line-height: 60px;
-    }
-    
-    .timeline-yr span {
-        font-size: 14px;
-        line-height: 60px;
-    }
-    
-    .timeline-wrapper:before {
-        left: 28px;
-    }
-    
-    /* Contact section - stack map and form */
-    section.contact .row {
-        flex-direction: column;
-    }
-    
-    section.contact .col-lg-5,
-    section.contact .col-lg-6 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-    
-    section.contact .col-lg-5 {
-        margin-bottom: 2rem;
-    }
-    
-    .google-map {
-        padding-bottom: 60%;
-        margin-bottom: 1rem;
-    }
-    
-    .contact-form h3 {
-        text-align: center;
-    }
+    /* Column padding reset */
+    .col-sm, .col-sm-6, [class*="col-sm"] { padding: 0; }
     
     /* Typography */
-    h2 {
-        font-size: 2em;
-    }
+    h2 { font-size: 2em; }
+    h3 { font-size: 1.5em; }
     
-    h3 {
-        font-size: 1.5em;
-    }
-    
-    p {
-        font-size: 16px;
-    }
-    
-    /* Responsive video */
-    .responsive-video {
-        max-width: 100%;
-        height: auto;
-    }
+    .responsive-video { max-width: 100%; height: auto; }
 }
 
 /* ==========================================================================
-   SMALL MOBILE (max-width: 576px)
+   RESPONSIVE - SMALL MOBILE (max-width: 576px)
    ========================================================================== */
 @media (max-width: 576px) {
-    /* Normal section padding */
-    section {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-    }
+    .container { padding: 0 10px; }
     
-    .full-screen {
-        padding: 1.25rem 0;
-    }
+    .about .about-image img { max-width: 180px; }
+    .animated-info { min-width: 180px; }
+    .animated-item { font-size: 20px; }
     
-    /* Container padding */
-    .container,
-    section .container {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
+    /* Timeline */
+    .timeline-info { margin-left: 4.5em; max-width: calc(100% - 80px); }
+    .timeline-yr { width: 50px; height: 50px; line-height: 50px; }
+    .timeline-yr span { font-size: 12px; line-height: 50px; }
+    .timeline-wrapper::before { left: 23px; }
+    .timeline-info h3 { font-size: 1.1rem; }
+    .timeline-info h5 { font-size: 0.95rem; }
+    .timeline-info table td { font-size: 13px; }
     
-    /* Hero image smaller */
-    section.about .about-image img {
-        max-width: 180px;
-    }
+    /* Swiper */
+    .swiper-slide h3 { font-size: 1.3em; }
+    .swiper-slide h5 { font-size: 0.95em; }
+    .swiper-slide p { font-size: 14px; }
+    .swiper-slide img { max-height: 180px; }
     
-    /* Animated text */
-    .animated-info {
-        min-width: 180px;
-    }
+    .google-map { padding-bottom: 80%; }
     
-    .animated-item {
-        font-size: 20px !important;
-    }
-    
-    /* Timeline compact */
-    .timeline-info {
-        margin-left: 4.5em;
-        max-width: calc(100% - 80px);
-    }
-    
-    .timeline-yr {
-        width: 50px;
-        height: 50px;
-        line-height: 50px;
-    }
-    
-    .timeline-yr span {
-        font-size: 12px;
-        line-height: 50px;
-    }
-    
-    .timeline-wrapper:before {
-        left: 23px;
-    }
-    
-    .timeline-info h3 {
-        font-size: 1.1rem;
-    }
-    
-    .timeline-info h5 {
-        font-size: 0.95rem;
-    }
-    
-    .timeline-info table td {
-        font-size: 13px;
-    }
-    
-    /* Project images */
-    .project .project-info img,
-    .swiper-slide img {
-        max-width: 100%;
-        max-height: 180px;
-    }
-    
-    /* Swiper text */
-    .swiper-slide h3 {
-        font-size: 1.3em;
-    }
-
-    .swiper-slide h5 {
-        font-size: 0.95em;
-    }
-
-    .swiper-slide p {
-        font-size: 14px;
-    }
-    
-    /* Google map taller */
-    .google-map {
-        padding-bottom: 80%;
-    }
-    
-    /* Contact form */
-    .contact-form {
-        padding: 0;
-    }
-    
-    /* Social icons */
-    .social-icons a {
-        margin: 0 4px;
-        font-size: 26px;
-    }
-    
-    .social-icons a i,
-    .social-icons a img {
-        font-size: 26px;
-    }
-    
-    /* Buttons - keep height and font size static */
-    .custom-btn {
-        height: 40px;
-        padding: 0 20px;
-        font-size: 16px;
-        line-height: 38px;
-    }
+    .social-icons a { margin: 0 4px; font-size: 26px; }
+    .social-icons a i, .social-icons a img { font-size: 26px; }
     
     /* Typography */
-    h2 {
-        font-size: 1.7em;
-    }
+    h2 { font-size: 1.7em; }
+    h3 { font-size: 1.3em; }
+    p { font-size: 15px; }
+    .small-text { font-size: 12px; padding: 6px 12px; }
     
-    h3 {
-        font-size: 1.3em;
-    }
-    
-    p {
-        font-size: 15px;
-    }
-    
-    .small-text {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
-    
-    /* Navbar mobile menu */
+    /* Navbar mobile */
     .navbar-collapse {
-        background: #fff;
+        background: var(--color-white);
         padding: 15px;
         margin-top: 10px;
         border-radius: 8px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
+    .navbar-expand-sm .navbar-nav .nav-link { padding: 10px 0; }
     
-    .navbar-expand-sm .navbar-nav .nav-link {
-        padding: 10px 0;
-    }
-    
-    /* Responsive video */
-    .responsive-video {
-        max-width: 100%;
-        height: 200px;
-    }
+    .responsive-video { height: 200px; }
 }
 
 /* ==========================================================================
-   EXTRA SMALL (max-width: 400px)
+   RESPONSIVE - EXTRA SMALL (max-width: 400px)
    ========================================================================== */
 @media (max-width: 400px) {
-    .row > [class*="col-"] {
-        padding-left: 0;
-        padding-right: 0;
-    }
+    .row > [class*="col-"] { padding: 0; }
     
-    section.project,
-    section.resume,
-    section.contact {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-    }
-
-    .swiper {
-        padding-bottom: 0;
-    }
-    /* Compact spacing */
-    section {
-        padding-top: 0.05rem;
-        padding-bottom: 0.05rem;
-    }
+    /* Timeline */
+    .timeline-info { margin-left: 3.8em; max-width: calc(100% - 65px); }
+    .timeline-yr { width: 42px; height: 42px; line-height: 42px; }
+    .timeline-yr span { font-size: 10px; line-height: 42px; }
+    .timeline-wrapper::before { left: 19px; }
+    .timeline-info h3 { font-size: 1rem; }
+    .timeline-info h5 { font-size: 0.85rem; }
+    .timeline-info table td { font-size: 12px; }
     
-    
-    /* Timeline ultra compact */
-    .timeline-info {
-        margin-left: 3.8em;
-        max-width: calc(100% - 65px);
-    }
-    
-    .timeline-yr {
-        width: 42px;
-        height: 42px;
-        line-height: 42px;
-    }
-    
-    .timeline-yr span {
-        font-size: 10px;
-        line-height: 42px;
-    }
-    
-    .timeline-wrapper:before {
-        left: 19px;
-    }
-    
-    .timeline-info h3 {
-        font-size: 1rem;
-    }
-    
-    .timeline-info h5 {
-        font-size: 0.85rem;
-    }
-    
-    .timeline-info table td {
-        font-size: 12px;
-    }
-    
-    /* Animated text */
-    .animated-item {
-        font-size: 18px !important;
-    }
-    
-    .animated,
-    .animated .mr-2 {
-        font-size: 18px;
-    }
+    /* Animated */
+    .animated, .animated .mr-2, .animated-item { font-size: 18px; }
     
     /* Typography */
-    h2 {
-        font-size: 1.5em;
-    }
-    
-    h3 {
-        font-size: 1.2em;
-    }
-    
-    p {
-        font-size: 14px;
-    }
-    
-    /* Buttons - keep height and font size static */
-    .custom-btn {
-        height: 40px;
-        padding: 0 20px;
-        font-size: 16px;
-        line-height: 38px;
-    }
+    h2 { font-size: 1.5em; }
+    h3 { font-size: 1.2em; }
+    p { font-size: 14px; }
 }

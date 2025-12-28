@@ -1132,6 +1132,11 @@ img {
         padding: 10px 0;
     }
     
+    /* Disable nav hover slide effect on mobile - hide the pseudo-element */
+    .nav-link span::before {
+        display: none;
+    }
+    
     /* Responsive video */
     .responsive-video {
         max-width: 100%;

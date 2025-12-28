@@ -1,21 +1,3 @@
-/**
- * Portfolio Website - Consolidated Stylesheet
- * Author: Rohit Shukla
- * Description: All custom styles for portfolio website
- * 
- * Contents:
- * 1. Base Styles & Typography
- * 2. Layout & Utilities
- * 3. Navbar
- * 4. Hero/About Section
- * 5. Animations
- * 6. Timeline (Experience/Education)
- * 7. Project Cards & Swiper
- * 8. Contact Form
- * 9. Footer
- * 10. Responsive Styles
- */
-
 /* ==========================================================================
    1. BASE STYLES & TYPOGRAPHY
    ========================================================================== */
@@ -70,6 +52,10 @@
        color: #212121;
    }
    
+   strong, b {
+       font-weight: 700;
+   }
+   
    h1, h2, h3, h4, h5 {
        font-weight: bold;
        letter-spacing: -1px;
@@ -107,6 +93,10 @@
 
 .full-screen {
     padding: 8rem 0;
+}
+
+.project-info .img-fluid {
+    width: 70%;
 }
 
 /* Section spacing - consistent vertical rhythm */
@@ -167,6 +157,12 @@ section.contact .row {
 section.project .item .row,
 .swiper-slide .row {
     justify-content: center;
+}
+
+/* About Me section image - 400px on desktop */
+section.project .item .project-info img {
+    width: 400px;
+    max-width: 100%;
 }
 
 section.project .item .row > [class*="col-"],
@@ -786,27 +782,27 @@ img {
         gap: 0;
     }
     
-    /* Hero - center all content */
+    /* Hero - left align all content on mobile */
     section.about .row {
-        text-align: center;
+        text-align: left;
     }
     
     section.about .about-text {
-        text-align: center;
+        text-align: left;
     }
     
     section.about .about-text table {
-        margin: 0 auto;
+        margin: 0;
         text-align: left;
     }
     
     section.about .social-icons {
-        justify-content: center;
+        justify-content: flex-start;
         display: flex;
     }
     
     section.about .custom-btn-group {
-        text-align: center;
+        text-align: left;
     }
     
     /* Hero image */
@@ -820,19 +816,20 @@ img {
         margin: 0 auto;
     }
     
-    /* Animated text centering */
+    /* Animated text - left align */
     .animated {
-        justify-content: center;
+        justify-content: flex-start;
         flex-wrap: wrap;
     }
     
     .animated-info {
         min-width: 100%;
-        text-align: center;
+        text-align: left;
     }
     
     .animated-item {
         font-size: 24px !important;
+        text-align: left;
     }
     
     /* Project/Swiper sections */
@@ -869,6 +866,7 @@ img {
         flex: 0 0 100%;
         padding-left: 0;
         padding-right: 0;
+        margin-top: 4px;
     }
     
     /* Remove side padding from col-sm columns on mobile */
@@ -881,17 +879,14 @@ img {
     
     .project .item .text-left {
         text-align: center !important;
+        margin-top: 4px;
     }
     
     .project .project-info {
         text-align: center;
         margin-bottom: 20px;
     }
-    
-    .project .project-info img {
-        max-width: 280px;
-        margin: 0 auto;
-    }
+
     
     /* Resume section - stack columns */
     section.resume .row {
@@ -1153,10 +1148,6 @@ img {
         padding-bottom: 0.05rem;
     }
     
-    /* Hero image */
-    section.about .about-image img {
-        max-width: 150px;
-    }
     
     /* Timeline ultra compact */
     .timeline-info {

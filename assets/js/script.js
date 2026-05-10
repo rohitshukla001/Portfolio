@@ -48,6 +48,7 @@ new Swiper('#project .swiper', {
     autoplay: {
         delay: 5000,
         disableOnInteraction: false,
+        pauseOnMouseEnter: true,
     },
 });
 
@@ -67,6 +68,7 @@ new Swiper('#certificate .swiper', {
     autoplay: {
         delay: 5000,
         disableOnInteraction: false,
+        pauseOnMouseEnter: true,
     },
 });
 

@@ -99,7 +99,7 @@
     width: 50%;
 }
 
-/* Section spacing - consistent vertical rhythm */
+/* Section spacing - consistent vertical rhythm across all sections */
 section {
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -108,14 +108,6 @@ section {
 section.about.full-screen {
     padding-top: 4rem;
     padding-bottom: 4rem;
-}
-
-/* Override Bootstrap's py-5 for more breathing room */
-section.project,
-section.resume,
-section.contact {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
 }
 
 /* Global container max-width for desktop - prevents content from spreading too wide */
@@ -477,7 +469,7 @@ section.about .col-lg-5 {
    
    .swiper {
        width: 100%;
-       padding-bottom: 50px;
+       padding-bottom: 30px;
        position: relative;
    }
    
@@ -789,6 +781,7 @@ img {
     
     section.about .about-text {
         text-align: left;
+        margin-left: 1rem;
     }
     
     section.about .about-text table {
@@ -898,6 +891,16 @@ img {
         margin-top: 0 !important;
     }
 
+    /* Justify section paragraphs on mobile only */
+    #resume p.color-text,
+    #project .swiper-slide p,
+    #certificate .swiper-slide p {
+        text-align: justify;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+    }
+
     
     /* Resume section - stack columns */
     section.resume .row {
@@ -917,6 +920,11 @@ img {
     /* Center Experiences and Educations headings on mobile */
     section.resume h3 {
         text-align: center;
+    }
+
+    /* Keep timeline entry headings left-aligned */
+    section.resume .timeline-info h3 {
+        text-align: left;
     }
 
     /* Timeline adjustments */
@@ -1153,20 +1161,8 @@ img {
         padding-right: 0;
     }
     
-    section.project,
-    section.resume,
-    section.contact {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-    }
-
     .swiper {
         padding-bottom: 0;
-    }
-    /* Compact spacing */
-    section {
-        padding-top: 0.05rem;
-        padding-bottom: 0.05rem;
     }
     
     

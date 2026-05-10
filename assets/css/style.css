@@ -315,29 +315,28 @@ section.about .col-lg-5 {
 .social-icons {
     padding-top: 20px;
 }
-   
-   .social-icons a {
-       color: #111A2C;
-       line-height: 30px;
-       font-size: 30px;
-       margin: 0 5px;
-       text-decoration: none;
-   }
-   
-   .social-icons a i,
-   .social-icons a img {
-       line-height: 30px;
-       font-size: 30px;
-       transition: all 200ms ease-in;
-       transform: scale(1);
-   }
-   
-   .social-icons a:hover i,
-   .social-icons a:hover img {
-       box-shadow: 0px 0px 150px #000000;
-       transition: all 200ms ease-in;
-       transform: scale(1.5);
-   }
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #0a1a2e;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: transform 250ms ease-out, color 250ms ease-out;
+}
+
+.social-icons a svg {
+    width: 26px;
+    height: 26px;
+    fill: currentColor;
+    display: block;
+}
+
+.social-icons a:hover {
+    color: #ffc200;
+    transform: translateY(-5px);
+}
    
    /* Custom Button - Single unified class */
    .custom-btn {
@@ -1092,13 +1091,12 @@ img {
     
     /* Social icons */
     .social-icons a {
-        margin: 0 4px;
-        font-size: 26px;
+        margin: 0 6px;
     }
-    
-    .social-icons a i,
-    .social-icons a img {
-        font-size: 26px;
+
+    .social-icons a svg {
+        width: 24px;
+        height: 24px;
     }
     
     /* Buttons - keep height and font size static */

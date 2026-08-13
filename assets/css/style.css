@@ -2,7 +2,37 @@
    1. BASE STYLES & TYPOGRAPHY
    ========================================================================== */
 
-   @import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,700");
+   @font-face {
+       font-family: 'Calibri';
+       src: url('../../font/calibri-regular.ttf') format('truetype');
+       font-weight: 400;
+       font-style: normal;
+       font-display: swap;
+   }
+
+   @font-face {
+       font-family: 'Calibri';
+       src: url('../../font/calibri-bold.ttf') format('truetype');
+       font-weight: 700;
+       font-style: normal;
+       font-display: swap;
+   }
+
+   @font-face {
+       font-family: 'Calibri';
+       src: url('../../font/calibri-italic.ttf') format('truetype');
+       font-weight: 400;
+       font-style: italic;
+       font-display: swap;
+   }
+
+   @font-face {
+       font-family: 'Calibri';
+       src: url('../../font/calibri-bold-italic.ttf') format('truetype');
+       font-weight: 700;
+       font-style: italic;
+       font-display: swap;
+   }
 
    html, body {
        overflow-x: hidden;
@@ -10,20 +40,20 @@
    }
    
    body {
-       font-family: 'Maven Pro', sans-serif;
+       font-family: 'Calibri', sans-serif;
        padding-top: 70px;
    }
    
-   /* Ensure Maven Pro font family is used everywhere */
+   /* Ensure Calibri font family is used everywhere */
    * {
-       font-family: 'Maven Pro', sans-serif;
+       font-family: 'Calibri', sans-serif;
    }
    
    h1, h2, h3, h4, h5, h6,
    p, a, span, li, td, th,
    input, textarea, select, button,
    label, .btn, .nav-link {
-       font-family: 'Maven Pro', sans-serif;
+       font-family: 'Calibri', sans-serif;
    }
    
    ul {
@@ -186,7 +216,7 @@ section.project .item .row > [class*="col-"],
    
    .navbar {
        position: fixed;
-       background-color: #ffffff;
+       background-color: #F5FAFE;
        top: 0;
        right: 0;
        left: 0;
@@ -199,7 +229,7 @@ section.project .item .row > [class*="col-"],
    }
    
    .navbar[class*="headroom--not-top"] {
-       background: #ffffff;
+       background: #F5FAFE;
        border-bottom: 1px solid #f0f0f0;
        padding-top: 0;
        padding-bottom: 0;
@@ -660,10 +690,19 @@ section.about .col-lg-5 {
       9. FOOTER
       ========================================================================== */
    
+   .footer {
+       background-color: #F5FAFE;
+       /* Same height as the fixed navbar (8px padding + 56px brand icon + 8px padding) */
+       height: 72px;
+       display: flex;
+       align-items: center;
+   }
+
    .copyright-text {
        font-size: 16px;
        font-weight: normal;
        display: block;
+       margin-bottom: 0;
    }
    
    /* Ensure all anchor/link text is 16px */
@@ -1127,7 +1166,7 @@ img {
     
     /* Navbar mobile menu */
     .navbar-collapse {
-        background: #fff;
+        background: #F5FAFE;
         padding: 15px;
         margin-top: 10px;
         border-radius: 8px;

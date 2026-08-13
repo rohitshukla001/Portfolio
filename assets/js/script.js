@@ -128,3 +128,10 @@ document.getElementById('contactForm').addEventListener('submit', function (even
             console.error('EmailJS Error:', error);
         });
 });
+
+/* ==========================================================================
+   6. DYNAMIC COPYRIGHT YEAR
+   Shows the last two digits of the current year
+   ========================================================================== */
+
+document.getElementById('copyrightYear').textContent = String(new Date().getFullYear()).slice(-2);

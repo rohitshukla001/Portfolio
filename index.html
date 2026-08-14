@@ -2,12 +2,12 @@
 <html lang="en">
    <head>
       <meta charset="utf-8">
-      <meta name="robots" content="noindex, nofollow">
+      <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="description" content="">
       <meta name="author" content="">
-      <title>Rohit Shukla — Software Engineer</title>
-      <link rel="icon" type="image/x-icon" href="images/favicon/favicon.png">
+      <title>Rohit Shukla | Software Engineer</title>
+      <link rel="icon" type="image/x-icon" href="assets/images/favicon/favicon.png">
       
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
       
@@ -63,7 +63,7 @@
                         <span class="mr-2">Hey folks, I'm</span>
                         <div class="animated-info">
                            <span class="animated-item">Rohit Shukla</span>
-                           <span class="animated-item">Software Engineer</span>
+                           <span class="animated-item">a Software Engineer</span>
                         </div>
                      </h3>
                      <table>
@@ -110,7 +110,7 @@
                         </a>
                      </div>
                      <div class="custom-btn-group mt-4">
-                        <a target="_blank" href="Rohit_Shukla_Resume.pdf"
+                        <a target="_blank" href="resume/Rohit_Shukla_Resume.pdf"
                            class="btn custom-btn custom-btn-link"><i class="fa-solid fa-download mr-1"></i>
                         Download Resume</a>
                      </div>
@@ -118,14 +118,14 @@
                </div>
                <div class="col-lg-5 col-md-12 col-12">
                   <div class="about-image svg">
-                     <img src="images/project/Rohit_professional_circle.png" class="img-fluid" alt="rohit image">
+                     <img src="assets/images/project/Rohit_professional_circle.png" class="img-fluid" alt="Portrait of Rohit Shukla">
                   </div>
                </div>
             </div>
          </div>
       </section>
       
-      <section class="project" id="resume">
+      <section class="project about-me" id="resume">
          <div class="container">
             <div >
                <div class="text-center mx-auto col-12">
@@ -137,15 +137,17 @@
                         <div class="row">
                            <div class="col-sm-6">
                               <div class="project-info">
-                                 <img src="images/project/about-us.png" class="img-fluid"
-                                    alt="project image">
+                                 <img src="assets/images/project/about-us.png" class="img-fluid"
+                                    alt="Illustration of a developer working at a laptop">
                               </div>
                            </div>
                            <div class="col-sm">
                               <div class="text-left">
                                  <p class="color-text">
-                                       I'm a Full Stack Developer with 4+ years building Go and Java distributed systems on GCP. I work on multi-tenant backend infrastructure: routing, rate limits, caching, retries, and failure handling. Currently at Vendasta building services used by thousands of SMBs and partners. Built an inference gateway in Go for LLM traffic with tenant budgets, idempotency replay, async jobs over NATS, provider failover, and Redis caching. I care about operational reliability under failure: dead upstreams, cold caches, stuck workers, and production debugging at 3am. Also experimenting with agentic AI systems using Google ADK, Gemini, RAG, and MCP workflows.                                 <div class="custom-btn-group mt-4">
-                                    <a target="_blank" href="Rohit_Shukla_Resume.pdf"
+                                       I'm a Full Stack Developer with 4+ years building Go and Java distributed systems on GCP. I work on multi-tenant backend infrastructure: routing, rate limits, caching, retries, and failure handling. Currently at Vendasta building services used by thousands of SMBs and partners. Built an inference gateway in Go for LLM traffic with tenant budgets, idempotency replay, async jobs over NATS, provider failover, and Redis caching. I care about operational reliability under failure: dead upstreams, cold caches, stuck workers, and production debugging at 3am. Also experimenting with agentic AI systems using Google ADK, Gemini, RAG, and MCP workflows.
+                                 </p>
+                                 <div class="custom-btn-group mt-4">
+                                    <a target="_blank" href="resume/Rohit_Shukla_Resume.pdf"
                                        class="btn custom-btn custom-btn-link"><i
                                        class="fa-solid fa-download mr-1"></i> Download Resume</a>
                                  </div>
@@ -173,8 +175,8 @@
                               <div class="row">
                                  <div class="col-sm-6">
                                     <div class="project-info">
-                                       <img src="images/project/inference-gateway-image.png" class="img-fluid"
-                                          alt="project image">
+                                       <img src="assets/images/project/inference-gateway-image.png" class="img-fluid"
+                                          alt="Inference Gateway project illustration">
                                     </div>
                                  </div>
                                  <div class="col-sm">
@@ -182,7 +184,7 @@
                                        <h5>Golang · gRPC · Prometheus + Grafana</h5>
                                        <h3 class="text-uppercase">Inference gateway</h3>
                                        <p>
-                                          This is an inference gateway that sits between our applications and model providers like OpenAI, Anthropic, and Google. Instead of each app integrating with providers directly, all traffic flows through this gateway. It handles routing, retries, caching, and cost controls, giving us consistent behavior and the ability to switch models or manage failures without changing application code.
+                                          The gateway sits between our applications and model providers like OpenAI, Anthropic, and Google. Instead of each app integrating with providers directly, all traffic flows through this gateway. It handles routing, retries, caching, and cost controls, giving us consistent behavior and the ability to switch models or manage failures without changing application code.
                                        </p>
                                     </div>
                                  </div>
@@ -194,8 +196,8 @@
                               <div class="row">
                                  <div class="col-sm-6">
                                     <div class="project-info">
-                                       <img src="images/project/event-image.png" class="img-fluid"
-                                          alt="project image">
+                                       <img src="assets/images/project/event-image.png" class="img-fluid"
+                                          alt="Event Management Application preview">
                                     </div>
                                  </div>
                                  <div class="col-sm">
@@ -203,13 +205,9 @@
                                        <h5>Java · Spring Boot</h5>
                                        <h3 class="text-uppercase">Event Management Application</h3>
                                        <p>
-                                          I designed this application to simplify event planning and
-                                          management. It handles
-                                          event scheduling, venue booking, role-based access, ticketing,
-                                          attendee
-                                          management, payments, user authentication, database management,
-                                          testing, and
-                                          documentation.
+                                          I designed this application to simplify event planning:
+                                          scheduling, venue booking, and ticketing in one place, with
+                                          attendee management, payments, and role-based access built in.
                                        </p>
                                     </div>
                                  </div>
@@ -221,8 +219,8 @@
                               <div class="row">
                                  <div class="col-sm-6">
                                     <div class="project-info">
-                                       <img src="images/project/ofd-image.png" class="img-fluid"
-                                          alt="project image">
+                                       <img src="assets/images/project/ofd-image.png" class="img-fluid"
+                                          alt="Online Food Delivery Website preview">
                                     </div>
                                  </div>
                                  <div class="col-sm">
@@ -230,11 +228,8 @@
                                        <h5>Python · Django</h5>
                                        <h3 class="text-uppercase">Online Food Delivery Website</h3>
                                        <p>
-                                          I created a dynamic website called "Online Food Delivery System"
-                                          using HTML, CSS,
-                                          Bootstrap, Python, and Django. Users can sign up, log in, choose
-                                          their favorite
-                                          food, and place orders here.
+                                          Users can sign up, log in, choose their favorite food, and place
+                                          orders, with the whole flow rendered server-side.
                                        </p>
                                        <a target="_blank" href="https://youtu.be/3FfMfbh7lTE"
                                           class="btn custom-btn custom-btn-link">Watch video</a>
@@ -248,8 +243,8 @@
                               <div class="row">
                                  <div class="col-sm-6">
                                     <div class="project-info">
-                                       <img src="images/project/fnd-image.png" class="img-fluid"
-                                          alt="project image">
+                                       <img src="assets/images/project/fnd-image.png" class="img-fluid"
+                                          alt="Fake News Detection preview">
                                     </div>
                                  </div>
                                  <div class="col-sm">
@@ -257,12 +252,9 @@
                                        <h5>Machine Learning · NLP · Python · Django</h5>
                                        <h3 class="text-uppercase">Fake News Detection</h3>
                                        <p>
-                                          This project is a supervised learning classification model. Users
-                                          can input news
-                                          in text form, and the model will classify it as "Real" or "Fake"
-                                          based on the
-                                          trained dataset. It uses a Logistic Regression algorithm with 96%
-                                          accuracy.
+                                          Users paste news text and the model labels it "Real" or "Fake"
+                                          based on the trained dataset. It uses a Logistic Regression
+                                          algorithm with 96% accuracy.
                                        </p>
                                        <a target="_blank" href="https://youtu.be/A63WQlNk4pw"
                                           class="btn custom-btn custom-btn-link">Watch video</a>
@@ -276,8 +268,8 @@
                               <div class="row">
                                  <div class="col-sm-6">
                                     <div class="project-info">
-                                       <img src="images/project/emp-management-system.png" class="img-fluid"
-                                          alt="project image">
+                                       <img src="assets/images/project/emp-management-system.png" class="img-fluid"
+                                          alt="Employee Management System preview">
                                     </div>
                                  </div>
                                  <div class="col-sm">
@@ -285,12 +277,8 @@
                                        <h5>Java · Spring Boot · Thymeleaf · PostgreSQL</h5>
                                        <h3 class="text-uppercase">Employee Management System</h3>
                                        <p>
-                                          This system helps employees maximize their daily efforts to achieve
-                                          organizational goals. It simplifies data storage and access, and its
-                                          CRUD
-                                          features allow for easy and quick activity management. The project
-                                          is built using
-                                          Java, Spring Boot, Thymeleaf, JPA, Bootstrap, and PostgreSQL.
+                                          Employee records live in one place: add, search, update, and
+                                          remove entries through a server-rendered UI.
                                        </p>
                                     </div>
                                  </div>
@@ -344,7 +332,7 @@
                         </div>
                         <div class="color-text timeline-info">
                            <h3>
-                              <span>Dataman computer systems</span><br>
+                              <span>Dataman Computer Systems</span><br>
                               <h5>Associate Software Developer</h5>
                            </h3>
                            <table>
@@ -425,8 +413,8 @@
                               <div class="row">
                                  <div class="col-sm-6">
                                     <div class="project-info">
-                                       <img src="images/project/oops-with-core-java-image.png"
-                                          class="img-fluid" alt="certificate oops image">
+                                       <img src="assets/images/project/oops-with-core-java-image.png"
+                                          class="img-fluid" alt="OOPs with Core Java certificate from E & ICT Academy, IIT Kanpur">
                                     </div>
                                  </div>
                                  <div class="col-sm">
@@ -442,7 +430,7 @@
                                           </tbody>
                                        </table>
                                        <a target="_blank"
-                                          href="images/oops-and-java-certificate-iit-kanpur.pdf"
+                                          href="assets/documents/oops-and-java-certificate-iit-kanpur.pdf"
                                           class="btn custom-btn custom-btn-link">View now</a>
                                     </div>
                                  </div>
@@ -454,8 +442,8 @@
                               <div class="row">
                                  <div class="col-sm-6">
                                     <div class="project-info">
-                                       <img src="images/scrum-certificate-image.png" class="img-fluid"
-                                          alt="certificate scrum image">
+                                       <img src="assets/images/scrum-certificate-image.png" class="img-fluid"
+                                          alt="Scrum Alliance ScrumMaster certificate">
                                     </div>
                                  </div>
                                  <div class="col-sm">
@@ -470,7 +458,7 @@
                                              </tr>
                                           </tbody>
                                        </table>
-                                       <a target="_blank" href="images/scrum-certificate.pdf"
+                                       <a target="_blank" href="assets/documents/scrum-certificate.pdf"
                                           class="btn custom-btn custom-btn-link">View now</a>
                                     </div>
                                  </div>
@@ -482,8 +470,8 @@
                               <div class="row">
                                  <div class="col-sm-6">
                                     <div class="project-info">
-                                       <img src="images/sprouts.png" class="img-fluid"
-                                          alt="certificate sprouts image">
+                                       <img src="assets/images/sprouts.png" class="img-fluid"
+                                          alt="Vendasta SPROUT Program certificate">
                                     </div>
                                  </div>
                                  <div class="col-sm">
@@ -498,7 +486,7 @@
                                              </tr>
                                           </tbody>
                                        </table>
-                                       <a target="_blank" href="images/sprouts.png"
+                                       <a target="_blank" href="assets/images/sprouts.png"
                                           class="btn custom-btn custom-btn-link">View now</a>
                                     </div>
                                  </div>
@@ -532,7 +520,7 @@
                                  <div class="col-sm-6">
                                     <div class="project-info">
                                        <video class="responsive-video" controls>
-                                          <source src="images/floraos-google-adk-hackathon.mp4"
+                                          <source src="assets/videos/floraos-google-adk-hackathon.mp4"
                                              type="video/mp4">
                                           Your browser does not support the video tag.
                                        </video>
@@ -542,17 +530,17 @@
                                     <div class="text-left">
                                        <h3 class="text-uppercase">Autonomous Urban Garden Management System
                                        </h3>
-                                       <p>AI-powered urban garden management using Google's ADK. Multi-agent
-                                          system automates soil, weather & plant monitoring for smart
-                                          gardening decisions. Addresses complex process automation...
+                                       <p>An urban garden manager built on Google's Agent Development Kit.
+                                          A team of agents monitors soil, weather, and plant health, and
+                                          turns the readings into day-to-day gardening decisions.
                                        </p>
-                                       <p><strong>Tool:</strong> Agent Development Kit Hackathon with Google Cloud</p>
+                                       <p><strong>Event:</strong> Agent Development Kit Hackathon with Google Cloud</p>
                                        <a target="_blank"
                                           href="https://devpost.com/software/floraos-autonomous-urban-garden-management-system"
                                           class="btn custom-btn custom-btn-link">View now</a>
                                        <a target="_blank"
                                           href="https://github.com/rohitshukla001/GardenControlAgent"
-                                          class="btn custom-btn custom-btn-link">github</a>
+                                          class="btn custom-btn custom-btn-link">GitHub</a>
                                     </div>
                                  </div>
                               </div>
@@ -583,7 +571,7 @@
                </div>
                <div class="col-lg-6 col-12">
                   <div class="color-text contact-form">
-                     <h3>Interested to work together? Let's talk</h3>
+                     <h3>Interested in working together? Let's talk</h3>
                      <form id="contactForm">
                         <div class="row">
                            <div class="col-lg-6 col-12">
@@ -626,7 +614,7 @@
             <div class="row">
                <div class="col-lg-12 col-12">
                   <p class="copyright-text text-center">Copyright © 2022-<span id="copyrightYear">26</span> <a href="https://info.rohitshukla.net"
-                     target="_blank">info.rohitshukla.net</a> . All rights reserved</p>
+                     target="_blank">info.rohitshukla.net</a>. All rights reserved</p>
                </div>
             </div>
          </div>

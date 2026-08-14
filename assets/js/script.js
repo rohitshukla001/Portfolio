@@ -1,56 +1,52 @@
-(function () {
-    emailjs.init("dnQ7CtoblL4arIed7");
-})();
+document.getElementById('copyrightYear').textContent = String(new Date().getFullYear()).slice(-2);
+
+document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (event) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (!target || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+        event.preventDefault();
+        target.scrollIntoView();
+    });
+});
+
+document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
+    link.addEventListener('click', function () {
+        const menu = document.getElementById('navbarNav');
+        if (menu.classList.contains('show')) {
+            document.querySelector('.navbar-toggler').click();
+        }
+    });
+});
+
+emailjs.init("dnQ7CtoblL4arIed7");
 
 window.addEventListener('scroll', function () {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 10) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
+    document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 10);
 });
 
 $(function () {
     $('[data-toggle="tooltip"]').tooltip();
 });
 
-new Swiper('#project .swiper', {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    pagination: {
-        el: '#project .swiper-pagination',
-        clickable: true,
-    },
-    navigation: {
-        nextEl: '#project .swiper-button-next',
-        prevEl: '#project .swiper-button-prev',
-    },
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-    },
-});
-
-new Swiper('#certificate .swiper', {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    pagination: {
-        el: '#certificate .swiper-pagination',
-        clickable: true,
-    },
-    navigation: {
-        nextEl: '#certificate .swiper-button-next',
-        prevEl: '#certificate .swiper-button-prev',
-    },
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-    },
+['#project', '#certificate'].forEach(function (id) {
+    new Swiper(id + ' .swiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: id + ' .swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: id + ' .swiper-button-next',
+            prevEl: id + ' .swiper-button-prev',
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+    });
 });
 
 document.getElementById('contactForm').addEventListener('submit', function (event) {
@@ -64,13 +60,11 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     submitBtn.textContent = 'Sending...';
     formMessage.innerHTML = '';
 
-    const currentDate = new Date().toLocaleString();
-
     const formData = {
         name: document.getElementById('contactName').value,
         email: document.getElementById('contactEmail').value,
         message: document.getElementById('contactMessage').value,
-        submission_date: currentDate
+        submission_date: new Date().toLocaleString()
     };
 
     emailjs.send("rohitvendasta@gmail.com", "template_euenjja", formData)
@@ -79,10 +73,10 @@ document.getElementById('contactForm').addEventListener('submit', function (even
             submitBtn.disabled = false;
             submitBtn.textContent = originalBtnText;
 
-            let countdown = 10;
-            formMessage.innerHTML = '<span class="form-message-success">✓ Message sent successfully! I\'ll get back to you soon. <span id="countdown">(' + countdown + 's)</span></span>';
+            let countdown = 5;
+            formMessage.innerHTML = '<span class="form-message-success">Message sent! I\'ll get back to you soon. <span id="countdown">(' + countdown + 's)</span></span>';
 
-            const countdownInterval = setInterval(function() {
+            const countdownInterval = setInterval(function () {
                 countdown--;
                 const countdownEl = document.getElementById('countdown');
                 if (countdown > 0 && countdownEl) {
@@ -94,21 +88,9 @@ document.getElementById('contactForm').addEventListener('submit', function (even
             }, 1000);
 
         }, function (error) {
-            formMessage.innerHTML = '<span class="form-message-error">✗ Failed to send message. Please try again or email me directly.</span>';
+            formMessage.innerHTML = '<span class="form-message-error">Failed to send message. Please try again or email me directly.</span>';
             submitBtn.disabled = false;
             submitBtn.textContent = originalBtnText;
             console.error('EmailJS Error:', error);
         });
-});
-
-document.getElementById('copyrightYear').textContent = String(new Date().getFullYear()).slice(-2);
-
-document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-    link.addEventListener('click', function (event) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            event.preventDefault();
-            target.scrollIntoView();
-        }
-    });
 });

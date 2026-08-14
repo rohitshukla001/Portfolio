@@ -16,7 +16,7 @@ Each section owns one concern and stands alone; you can revise any section witho
 
 ## Baseline
 
-The site is a static single page on GitHub Pages: Bootstrap 4.6 grid, Font Awesome icons, Swiper carousels, and vanilla JavaScript. The header is a fixed 72px bar and the footer matches it. All custom styling lives in one stylesheet, `assets/css/style.css`, organised in numbered sections. The four Calibri faces are self-hosted TTFs.
+The site is a static single page on GitHub Pages: Bootstrap 4.6 grid, Font Awesome icons, Swiper carousels, and vanilla JavaScript plus jQuery for Bootstrap components. The header is a fixed 72px bar and the footer matches it, both sized by the `--header-height` token. All custom styling lives in one stylesheet, `assets/css/style.css`; the file is comment-free by design, with shared values collected as custom properties in `:root`. Calibri regular and bold are self-hosted TTFs.
 
 ## Consistency
 
@@ -44,7 +44,7 @@ Improvements here must respect the identity: adjust shades minimally to reach 4.
 
 ## Performance and implementation (applies to everything)
 
-The stack stays exactly as it is: a static page, Bootstrap 4.6, vanilla JavaScript, no build step, no new dependencies. Changes land in the existing `style.css` and `index.html`, keeping the stylesheet's numbered-section organisation. Every asset stays self-hosted. Nothing regresses load time.
+The stack stays exactly as it is: a static page, Bootstrap 4.6, vanilla JavaScript, no build step, no new dependencies. Changes land in the existing `style.css` and `index.html`, keeping all custom styling in that single stylesheet. Every asset stays self-hosted. Nothing regresses load time.
 
 ## Working rules
 

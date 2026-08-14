@@ -1,2 +1,6 @@
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /resume/
+Disallow: /old_resume/
+Disallow: /docs/
+Disallow: /assets/documents/

@@ -1,6 +1,13 @@
+:root {
+    --header-height: 72px;
+    --surface: #F5FAFE;
+    --feature-image-size: 270px;
+    --column-gutter: 15px;
+}
+
    @font-face {
        font-family: 'Calibri';
-       src: url('../../font/calibri-regular.ttf') format('truetype');
+       src: url('../fonts/calibri-regular.ttf') format('truetype');
        font-weight: 400;
        font-style: normal;
        font-display: swap;
@@ -8,25 +15,9 @@
 
    @font-face {
        font-family: 'Calibri';
-       src: url('../../font/calibri-bold.ttf') format('truetype');
+       src: url('../fonts/calibri-bold.ttf') format('truetype');
        font-weight: 700;
        font-style: normal;
-       font-display: swap;
-   }
-
-   @font-face {
-       font-family: 'Calibri';
-       src: url('../../font/calibri-italic.ttf') format('truetype');
-       font-weight: 400;
-       font-style: italic;
-       font-display: swap;
-   }
-
-   @font-face {
-       font-family: 'Calibri';
-       src: url('../../font/calibri-bold-italic.ttf') format('truetype');
-       font-weight: 700;
-       font-style: italic;
        font-display: swap;
    }
 
@@ -37,7 +28,7 @@
 
    body {
        font-family: 'Calibri', sans-serif;
-       padding-top: 72px;
+       padding-top: var(--header-height);
    }
 
    * {
@@ -113,18 +104,18 @@
    }
 
 .project-info .img-fluid {
-    width: 270px;
+    width: var(--feature-image-size);
 }
 
 .about-image img,
-#resume .project-info img {
-    width: 270px;
+.about-me .project-info img {
+    width: var(--feature-image-size);
     max-width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: contain;
 }
 
-#resume .row {
+.about-me .row {
     align-items: center;
 }
 
@@ -134,7 +125,7 @@ section {
 }
 
 section.about {
-    padding-top: 6rem;
+    padding-top: 5rem;
 }
 
 .container {
@@ -201,7 +192,7 @@ section.project .item .row > [class*="col-"],
 
    .navbar {
        position: fixed;
-       background-color: #F5FAFE;
+       background-color: var(--surface);
        top: 0;
        right: 0;
        left: 0;
@@ -214,7 +205,7 @@ section.project .item .row > [class*="col-"],
    }
 
    .navbar[class*="headroom--not-top"] {
-       background: #F5FAFE;
+       background: var(--surface);
        border-bottom: 1px solid #f0f0f0;
        padding-top: 0;
        padding-bottom: 0;
@@ -269,6 +260,21 @@ section.project .item .row > [class*="col-"],
    .navbar-light .navbar-nav .nav-link:focus span,
    .navbar-light .navbar-nav .nav-link:hover span {
        transform: translateY(-100%);
+   }
+
+   @media (hover: none) {
+       .nav-link span {
+           transition: none;
+       }
+
+       .nav-link span::before {
+           display: none;
+       }
+
+       .navbar-light .navbar-nav .nav-link:focus span,
+       .navbar-light .navbar-nav .nav-link:hover span {
+           transform: none;
+       }
    }
 
    .navbar-toggler {
@@ -397,7 +403,7 @@ section.about .col-lg-5 {
    .animated-info {
        display: inline-block;
        vertical-align: top;
-       min-width: 260px;
+       min-width: 280px;
        position: relative;
    }
 
@@ -595,8 +601,8 @@ section.about .col-lg-5 {
 
    .contact-form h3 {
        margin-bottom: 0;
-       padding-left: 15px;
-       padding-right: 15px;
+       padding-left: var(--column-gutter);
+       padding-right: var(--column-gutter);
    }
 
    .contact-form .form-control {
@@ -633,7 +639,7 @@ section.about .col-lg-5 {
    }
 
    #formMessage {
-       font-size: 14px;
+       font-size: 15px;
        margin-top: 10px;
        text-align: center;
    }
@@ -671,9 +677,8 @@ section.about .col-lg-5 {
    }
 
    .footer {
-       background-color: #F5FAFE;
-
-       height: 72px;
+       background-color: var(--surface);
+       height: var(--header-height);
        display: flex;
        align-items: center;
    }
@@ -816,14 +821,14 @@ img {
         text-align: left;
     }
 
+    .animated,
+    .animated .mr-2,
     .animated-item {
-        font-size: 24px !important;
-        text-align: left;
+        font-size: 24px;
     }
 
-    .animated,
-    .animated .mr-2 {
-        font-size: 24px;
+    .animated-item {
+        text-align: left;
     }
 
     .swiper-slide .row {
@@ -930,7 +935,7 @@ img {
     }
 
     .timeline-yr span {
-        font-size: 14px;
+        font-size: 15px;
         line-height: 60px;
     }
 
@@ -1003,15 +1008,12 @@ img {
     }
 
     .animated-info {
-        min-width: 180px;
-    }
-
-    .animated-item {
-        font-size: 20px !important;
+        min-width: 200px;
     }
 
     .animated,
-    .animated .mr-2 {
+    .animated .mr-2,
+    .animated-item {
         font-size: 20px;
     }
 
@@ -1027,7 +1029,7 @@ img {
     }
 
     .timeline-yr span {
-        font-size: 12px;
+        font-size: 15px;
         line-height: 50px;
     }
 
@@ -1044,7 +1046,7 @@ img {
     }
 
     .timeline-info table td {
-        font-size: 13px;
+        font-size: 15px;
     }
 
     .project .project-info img,
@@ -1062,7 +1064,7 @@ img {
     }
 
     .swiper-slide p {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .google-map {
@@ -1102,12 +1104,12 @@ img {
     }
 
     .small-text {
-        font-size: 12px;
+        font-size: 15px;
         padding: 6px 12px;
     }
 
     .navbar-collapse {
-        background: #F5FAFE;
+        background: var(--surface);
         padding: 15px;
         margin-top: 10px;
         border-radius: 8px;
@@ -1120,6 +1122,11 @@ img {
 
     .nav-link span::before {
         display: none;
+    }
+
+    .navbar-light .navbar-nav .nav-link:focus span,
+    .navbar-light .navbar-nav .nav-link:hover span {
+        transform: none;
     }
 
     .responsive-video {
@@ -1150,7 +1157,7 @@ img {
     }
 
     .timeline-yr span {
-        font-size: 10px;
+        font-size: 15px;
         line-height: 42px;
     }
 
@@ -1163,19 +1170,16 @@ img {
     }
 
     .timeline-info h5 {
-        font-size: 0.85rem;
+        font-size: 15px;
     }
 
     .timeline-info table td {
-        font-size: 12px;
-    }
-
-    .animated-item {
-        font-size: 18px !important;
+        font-size: 15px;
     }
 
     .animated,
-    .animated .mr-2 {
+    .animated .mr-2,
+    .animated-item {
         font-size: 18px;
     }
 
@@ -1188,7 +1192,7 @@ img {
     }
 
     p {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .custom-btn {

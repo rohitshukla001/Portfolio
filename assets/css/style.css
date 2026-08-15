@@ -193,6 +193,16 @@ section.contact .row {
        font-size: 40px;
    }
 
+   @media (min-width: 992px) {
+       .navbar-brand-icon {
+           margin-left: 24px;
+       }
+
+       .navbar-collapse {
+           margin-left: 30%;
+       }
+   }
+
    .navbar-expand-sm .navbar-nav .nav-link {
        padding: 0 20px;
        color: var(--ink);

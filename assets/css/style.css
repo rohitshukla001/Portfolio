@@ -83,11 +83,7 @@
        margin: 24px 0;
    }
 
-   h2 {
-       color: #353535;
-       font-size: 25px;
-   }
-
+   h2,
    h3 {
        color: #212121;
        font-size: 25px;
@@ -98,9 +94,13 @@
        font-size: 20px;
    }
 
-   h5 {
+   .subtitle {
        color: #212121;
        font-size: 20px;
+       font-weight: bold;
+       letter-spacing: -1px;
+       line-height: 1.2;
+       margin-bottom: 0.5rem;
    }
 
 .project-info .img-fluid {
@@ -518,9 +518,10 @@ section.about .col-lg-5 {
        margin-bottom: 10px;
    }
 
-   .swiper-slide h5 {
+   .swiper-slide .subtitle {
        font-size: 20px;
        color: #212121;
+       line-height: 1.2;
        margin-bottom: 15px;
    }
 
@@ -599,7 +600,7 @@ section.about .col-lg-5 {
        border-radius: 10px;
    }
 
-   .contact-form h3 {
+   .contact-form h2 {
        margin-bottom: 0;
        padding-left: var(--column-gutter);
        padding-right: var(--column-gutter);
@@ -898,7 +899,7 @@ img {
         margin-bottom: 0;
     }
 
-    section.resume h3 {
+    section.resume h2 {
         text-align: center;
     }
 
@@ -935,16 +936,13 @@ img {
         max-width: 100%;
     }
 
-    .contact-form h3 {
+    .contact-form h2 {
         text-align: center;
         padding-left: 0;
         padding-right: 0;
     }
 
-    h2 {
-        font-size: 2em;
-    }
-
+    h2,
     h3 {
         font-size: 1.5em;
     }
@@ -1014,7 +1012,7 @@ img {
         font-size: 1.1rem;
     }
 
-    .timeline-info h5 {
+    .timeline-info .subtitle {
         font-size: 0.95rem;
     }
 
@@ -1032,7 +1030,7 @@ img {
         font-size: 1.3em;
     }
 
-    .swiper-slide h5 {
+    .swiper-slide .subtitle {
         font-size: 0.95em;
     }
 
@@ -1060,10 +1058,7 @@ img {
         line-height: 38px;
     }
 
-    h2 {
-        font-size: 1.7em;
-    }
-
+    h2,
     h3 {
         font-size: 1.3em;
     }
@@ -1138,7 +1133,7 @@ img {
         font-size: 1rem;
     }
 
-    .timeline-info h5 {
+    .timeline-info .subtitle {
         font-size: 15px;
     }
 
@@ -1152,10 +1147,7 @@ img {
         font-size: 18px;
     }
 
-    h2 {
-        font-size: 1.5em;
-    }
-
+    h2,
     h3 {
         font-size: 1.2em;
     }

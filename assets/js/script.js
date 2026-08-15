@@ -41,7 +41,7 @@ $(function () {
     $('[data-toggle="tooltip"]').tooltip();
 });
 
-['#project', '#certificate'].forEach(function (id) {
+['#project', '#hackathon', '#certificate'].forEach(function (id) {
     new Swiper(id + ' .swiper', {
         slidesPerView: 1,
         spaceBetween: 30,

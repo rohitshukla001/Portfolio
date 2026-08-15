@@ -23,7 +23,7 @@
       
       <nav class="navbar navbar-expand-sm navbar-light">
          <div class="container">
-            <i class="fa-solid fa-briefcase p-2 navbar-brand-icon"></i> <a class="navbar-brand">Portfolio</a>
+            <i class="fa-solid fa-briefcase p-2 navbar-brand-icon" aria-hidden="true"></i> <a class="navbar-brand">Portfolio</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -59,25 +59,25 @@
             <div class="row">
                <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
                   <div class="color-text text-left about-text">
-                     <h3 class="animated animated-text mt-2 mb-3">
+                     <h1 class="animated animated-text mt-2 mb-3" aria-label="Rohit Shukla, Software Engineer">
                         <span class="mr-2">Hey folks, I'm</span>
                         <div class="animated-info">
                            <span class="animated-item">Rohit Shukla</span>
                            <span class="animated-item">a Software Engineer</span>
                         </div>
-                     </h3>
+                     </h1>
                      <table>
                         <tbody>
                            <tr>
-                              <td><i class="fa-solid fa-envelope"></i></td>
+                              <td><i class="fa-solid fa-envelope" role="img" aria-label="Email"></i></td>
                               <td><a href="mailto:rohitshukla5911@gmail.com">rohitshukla5911@gmail.com</a></td>
                            </tr>
                            <tr>
-                              <td><i class="fa-solid fa-phone"></i></td>
+                              <td><i class="fa-solid fa-phone" role="img" aria-label="Phone"></i></td>
                               <td>9451790511</td>
                            </tr>
                            <tr>
-                              <td><i class="fa-solid fa-location-dot"></i></td>
+                              <td><i class="fa-solid fa-location-dot" role="img" aria-label="Location"></i></td>
                               <td>Chennai, Tamil Nadu, India</td>
                            </tr>
                         </tbody>
@@ -98,11 +98,6 @@
                               <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/>
                            </svg>
                         </a>
-                        <a target="_blank" href="https://www.reddit.com/user/rohitshukla1090/" title="Reddit" aria-label="Reddit">
-                           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true">
-                              <path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/>
-                           </svg>
-                        </a>
                         <a target="_blank" href="https://devpost.com/rawstar1090/" title="DEV POST" aria-label="dev.to">
                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true">
                               <path d="M7.42 10.05c-.18-.16-.46-.23-.84-.23H6l.02 2.44.04 2.45.56-.02c.41 0 .63-.07.83-.26.24-.24.26-.36.26-2.2 0-1.91-.02-1.96-.29-2.18zM0 4.94v14.12h24V4.94H0zM8.56 15.3c-.44.58-1.06.77-2.53.77H4.71V8.53h1.4c1.67 0 2.16.18 2.6.9.27.43.29.6.32 2.57.05 2.23-.02 2.73-.47 3.3zm5.09-5.47h-2.47v1.77h1.52v1.28l-.72.04-.75.03v1.77l1.22.03 1.2.04v1.28h-1.6c-1.53 0-1.6-.01-1.87-.3l-.3-.28v-3.16c0-3.02.01-3.18.25-3.48.23-.31.25-.31 1.88-.31h1.64v1.3zm4.68 5.45c-.17.43-.64.79-1 .79-.18 0-.45-.15-.67-.39-.32-.32-.45-.63-.82-2.08l-.9-3.39-.45-1.67h.76c.4 0 .75.02.75.05 0 .06 1.16 4.54 1.26 4.83.04.15.32-.7.73-2.3l.66-2.52.74-.04c.4-.02.73 0 .73.04 0 .14-1.67 6.38-1.8 6.68z"/>
@@ -111,7 +106,7 @@
                      </div>
                      <div class="custom-btn-group mt-4">
                         <a target="_blank" href="resume/Rohit_Shukla_Resume.pdf"
-                           class="btn custom-btn custom-btn-link"><i class="fa-solid fa-download mr-1"></i>
+                           class="btn custom-btn custom-btn-link"><i class="fa-solid fa-download mr-1" aria-hidden="true"></i>
                         Download Resume</a>
                      </div>
                   </div>
@@ -130,7 +125,7 @@
             <div >
                <div class="text-center mx-auto col-12">
                   <div class="col-lg-8 mx-auto mb-3">
-                     <h3 class="color-text text-uppercase">ABOUT ME</h3>
+                     <h2 class="color-text text-uppercase">ABOUT ME</h2>
                   </div>
                   <div>
                      <div>
@@ -149,7 +144,7 @@
                                  <div class="custom-btn-group mt-4">
                                     <a target="_blank" href="resume/Rohit_Shukla_Resume.pdf"
                                        class="btn custom-btn custom-btn-link"><i
-                                       class="fa-solid fa-download mr-1"></i> Download Resume</a>
+                                       class="fa-solid fa-download mr-1" aria-hidden="true"></i> Download Resume</a>
                                  </div>
                               </div>
                            </div>
@@ -166,7 +161,7 @@
             <div class="row">
                <div class="text-center mx-auto col-12">
                   <div class="col-lg-8 mx-auto mb-3">
-                     <h3 class="color-text text-uppercase">Projects</h3>
+                     <h2 class="color-text text-uppercase">Projects</h2>
                   </div>
                   <div class="swiper">
                      <div class="swiper-wrapper">
@@ -181,7 +176,7 @@
                                  </div>
                                  <div class="col-sm">
                                     <div class="text-left">
-                                       <h5>Golang · gRPC · Prometheus + Grafana</h5>
+                                       <p class="subtitle">Golang · gRPC · NATS · Redis · idempotency replay · provider failover</p>
                                        <h3 class="text-uppercase">Inference gateway</h3>
                                        <p>
                                           The gateway sits between our applications and model providers like OpenAI, Anthropic, and Google. Instead of each app integrating with providers directly, all traffic flows through this gateway. It handles routing, retries, caching, and cost controls, giving us consistent behavior and the ability to switch models or manage failures without changing application code.
@@ -202,7 +197,7 @@
                                  </div>
                                  <div class="col-sm">
                                     <div class="text-left">
-                                       <h5>Java · Spring Boot</h5>
+                                       <p class="subtitle">Java · Spring Boot</p>
                                        <h3 class="text-uppercase">Event Management Application</h3>
                                        <p>
                                           I designed this application to simplify event planning:
@@ -225,7 +220,7 @@
                                  </div>
                                  <div class="col-sm">
                                     <div class="text-left mt-4">
-                                       <h5>Python · Django</h5>
+                                       <p class="subtitle">Python · Django</p>
                                        <h3 class="text-uppercase">Online Food Delivery Website</h3>
                                        <p>
                                           Users can sign up, log in, choose their favorite food, and place
@@ -249,7 +244,7 @@
                                  </div>
                                  <div class="col-sm">
                                     <div class="text-left mt-4">
-                                       <h5>Machine Learning · NLP · Python · Django</h5>
+                                       <p class="subtitle">Machine Learning · NLP · Python · Django</p>
                                        <h3 class="text-uppercase">Fake News Detection</h3>
                                        <p>
                                           Users paste news text and the model labels it "Real" or "Fake"
@@ -274,7 +269,7 @@
                                  </div>
                                  <div class="col-sm">
                                     <div class="text-left mt-4">
-                                       <h5>Java · Spring Boot · Thymeleaf · PostgreSQL</h5>
+                                       <p class="subtitle">Java · Spring Boot · Thymeleaf · PostgreSQL</p>
                                        <h3 class="text-uppercase">Employee Management System</h3>
                                        <p>
                                           Employee records live in one place: add, search, update, and
@@ -286,9 +281,9 @@
                            </div>
                         </div>
                      </div>
-                     
+
                      <div class="swiper-pagination"></div>
-                     
+
                      <div class="swiper-button-prev"></div>
                      <div class="swiper-button-next"></div>
                   </div>
@@ -296,221 +291,13 @@
             </div>
          </div>
       </section>
-      
-      <section class="resume d-lg-flex justify-content-center align-items-center">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-6 col-12">
-                  <h3 class="color-text mb-4 text-uppercase">Experiences</h3>
-                  <div class="timeline">
-                     <div class="timeline-wrapper">
-                        <div class="timeline-yr">
-                           <span>2024</span>
-                        </div>
-                        <div class="color-text timeline-info">
-                           <h3>
-                              <span>Vendasta</span><br>
-                              <h5>Software Developer II</h5>
-                           </h3>
-                           <table>
-                              <tbody>
-                                 <tr>
-                                    <td><i class="fa-solid fa-location-dot mr-2"></i></td>
-                                    <td>Chennai, Tamil Nadu, India</td>
-                                 </tr>
-                                 <tr>
-                                    <td><i class="fa-regular fa-clock mr-2"></i></td>
-                                    <td>Sept-2024 to present</td>
-                                 </tr>
-                              </tbody>
-                           </table>
-                        </div>
-                     </div>
-                     <div class="timeline-wrapper">
-                        <div class="timeline-yr">
-                           <span>2022</span>
-                        </div>
-                        <div class="color-text timeline-info">
-                           <h3>
-                              <span>Dataman Computer Systems</span><br>
-                              <h5>Associate Software Developer</h5>
-                           </h3>
-                           <table>
-                              <tbody>
-                                 <tr>
-                                    <td><i class="fa-solid fa-location-dot mr-2"></i></td>
-                                    <td>Kanpur, Uttar Pradesh, India</td>
-                                    <hr>
-                                 <tr>
-                                    <td><i class="fa-regular fa-clock mr-2"></i></td>
-                                    <td> Feb-2022 to Sept-2024</td>
-                                 </tr>
-                                 </tr>
-                              </tbody>
-                           </table>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-lg-6 col-12">
-                  <h3 class="color-text mb-4 mobile-mt-2 text-uppercase">Education</h3>
-                  <div class="timeline">
-                     <div class="timeline-wrapper">
-                        <div class="timeline-yr">
-                           <span>2022</span>
-                        </div>
-                        <div class="color-text timeline-info">
-                           <h3>
-                              <span>Master of Computer Applications</span><br>
-                              <h5>Axis Business School</h5>
-                           </h3>
-                           <table>
-                              <tbody>
-                                 <tr>
-                                    <td><i class="fa-solid fa-location-dot mr-2"></i></td>
-                                    <td>Kanpur, Uttar Pradesh, India</td>
-                                 </tr>
-                              </tbody>
-                           </table>
-                        </div>
-                     </div>
-                     <div class="timeline-wrapper">
-                        <div class="timeline-yr">
-                           <span>2020</span>
-                        </div>
-                        <div class="text-left timeline-info">
-                           <h3>
-                              <span>Bachelor of Science</span><br>
-                              <h5>Subharti University</h5>
-                           </h3>
-                           <table>
-                              <tbody>
-                                 <tr>
-                                    <td><i class="fa-solid fa-location-dot mr-2"></i></td>
-                                    <td>Meerut, Uttar Pradesh, India</td>
-                                 </tr>
-                              </tbody>
-                           </table>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      
-      <section class="project" id="certificate">
+
+      <section class="project" id="hackathon">
          <div class="container">
             <div class="row">
                <div class="text-center mx-auto col-12">
                   <div class="col-lg-8 mx-auto mb-3">
-                     <h3 class="color-text text-uppercase">Certificates</h3>
-                  </div>
-                  <div class="swiper">
-                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                           <div class="container">
-                              <div class="row">
-                                 <div class="col-sm-6">
-                                    <div class="project-info">
-                                       <img src="assets/images/project/oops-with-core-java-image.png"
-                                          class="img-fluid" alt="OOPs with Core Java certificate from E & ICT Academy, IIT Kanpur">
-                                    </div>
-                                 </div>
-                                 <div class="col-sm">
-                                    <div class="color-text mt-4">
-                                       <h5>OOPs with Core Java</h5>
-                                       <h3 class="text-uppercase">E & ICT Academy, IIT Kanpur</h3>
-                                       <table>
-                                          <tbody>
-                                             <tr>
-                                                <td><i class="fa-solid fa-location-dot mr-2"></i></td>
-                                                <td>Kanpur, Uttar Pradesh, India</td>
-                                             </tr>
-                                          </tbody>
-                                       </table>
-                                       <a target="_blank"
-                                          href="assets/documents/oops-and-java-certificate-iit-kanpur.pdf"
-                                          class="btn custom-btn custom-btn-link">View now</a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="swiper-slide">
-                           <div class="container">
-                              <div class="row">
-                                 <div class="col-sm-6">
-                                    <div class="project-info">
-                                       <img src="assets/images/scrum-certificate-image.png" class="img-fluid"
-                                          alt="Scrum Alliance ScrumMaster certificate">
-                                    </div>
-                                 </div>
-                                 <div class="col-sm">
-                                    <div class="color-text mt-4">
-                                       <h5>Scrum Alliance</h5>
-                                       <h3 class="text-uppercase">ScrumMaster®</h3>
-                                       <table>
-                                          <tbody>
-                                             <tr>
-                                                <td><i class="fa-solid fa-location-dot mr-2"></i></td>
-                                                <td>Chennai, Tamil Nadu, India</td>
-                                             </tr>
-                                          </tbody>
-                                       </table>
-                                       <a target="_blank" href="assets/documents/scrum-certificate.pdf"
-                                          class="btn custom-btn custom-btn-link">View now</a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="swiper-slide">
-                           <div class="container">
-                              <div class="row">
-                                 <div class="col-sm-6">
-                                    <div class="project-info">
-                                       <img src="assets/images/sprouts.png" class="img-fluid"
-                                          alt="Vendasta SPROUT Program certificate">
-                                    </div>
-                                 </div>
-                                 <div class="col-sm">
-                                    <div class="color-text mt-4">
-                                       <h5>SPROUT Program</h5>
-                                       <h3 class="text-uppercase">Vendasta Technology</h3>
-                                       <table>
-                                          <tbody>
-                                             <tr>
-                                                <td><i class="fa-solid fa-location-dot mr-2"></i></td>
-                                                <td>Chennai, Tamil Nadu, India</td>
-                                             </tr>
-                                          </tbody>
-                                       </table>
-                                       <a target="_blank" href="assets/images/sprouts.png"
-                                          class="btn custom-btn custom-btn-link">View image</a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     
-                     <div class="swiper-pagination"></div>
-                     
-                     <div class="swiper-button-prev"></div>
-                     <div class="swiper-button-next"></div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      
-      <section class="project" id="certificate">
-         <div class="container">
-            <div class="row">
-               <div class="text-center mx-auto col-12">
-                  <div class="col-lg-8 mx-auto mb-3">
-                     <h3 class="text-uppercase">HACKATHON</h3>
+                     <h2 class="text-uppercase">HACKATHON</h2>
                   </div>
                   <div class="swiper">
                      <div class="swiper-wrapper">
@@ -558,13 +345,213 @@
             </div>
          </div>
       </section>
+
+      <section class="resume d-lg-flex justify-content-center align-items-center">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-6 col-12">
+                  <h2 class="color-text mb-4 text-uppercase">Experiences</h2>
+                  <div class="timeline">
+                     <div class="timeline-wrapper">
+                        <div class="timeline-yr">
+                           <span>2024</span>
+                        </div>
+                        <div class="color-text timeline-info">
+                           <h3>Vendasta</h3>
+                           <p class="subtitle">Software Developer II</p>
+                           <table>
+                              <tbody>
+                                 <tr>
+                                    <td><i class="fa-solid fa-location-dot mr-2" role="img" aria-label="Location"></i></td>
+                                    <td>Chennai, Tamil Nadu, India</td>
+                                 </tr>
+                                 <tr>
+                                    <td><i class="fa-regular fa-clock mr-2" role="img" aria-label="Dates"></i></td>
+                                    <td>Sept-2024 to present</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                     <div class="timeline-wrapper">
+                        <div class="timeline-yr">
+                           <span>2022</span>
+                        </div>
+                        <div class="color-text timeline-info">
+                           <h3>Dataman Computer Systems</h3>
+                           <p class="subtitle">Associate Software Developer</p>
+                           <table>
+                              <tbody>
+                                 <tr>
+                                    <td><i class="fa-solid fa-location-dot mr-2" role="img" aria-label="Location"></i></td>
+                                    <td>Kanpur, Uttar Pradesh, India</td>
+                                 </tr>
+                                 <tr>
+                                    <td><i class="fa-regular fa-clock mr-2" role="img" aria-label="Dates"></i></td>
+                                    <td>Feb-2022 to Sept-2024</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-6 col-12">
+                  <h2 class="color-text mb-4 mobile-mt-2 text-uppercase">Education</h2>
+                  <div class="timeline">
+                     <div class="timeline-wrapper">
+                        <div class="timeline-yr">
+                           <span>2022</span>
+                        </div>
+                        <div class="color-text timeline-info">
+                           <h3>Master of Computer Applications</h3>
+                           <p class="subtitle">Axis Business School</p>
+                           <table>
+                              <tbody>
+                                 <tr>
+                                    <td><i class="fa-solid fa-location-dot mr-2" role="img" aria-label="Location"></i></td>
+                                    <td>Kanpur, Uttar Pradesh, India</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                     <div class="timeline-wrapper">
+                        <div class="timeline-yr">
+                           <span>2020</span>
+                        </div>
+                        <div class="text-left timeline-info">
+                           <h3>Bachelor of Science</h3>
+                           <p class="subtitle">Subharti University</p>
+                           <table>
+                              <tbody>
+                                 <tr>
+                                    <td><i class="fa-solid fa-location-dot mr-2" role="img" aria-label="Location"></i></td>
+                                    <td>Meerut, Uttar Pradesh, India</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      
+      <section class="project" id="certificate">
+         <div class="container">
+            <div class="row">
+               <div class="text-center mx-auto col-12">
+                  <div class="col-lg-8 mx-auto mb-3">
+                     <h2 class="color-text text-uppercase">Certificates</h2>
+                  </div>
+                  <div class="swiper">
+                     <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                           <div class="container">
+                              <div class="row">
+                                 <div class="col-sm-6">
+                                    <div class="project-info">
+                                       <img src="assets/images/project/oops-with-core-java-image.png"
+                                          class="img-fluid" alt="OOPs with Core Java certificate from E & ICT Academy, IIT Kanpur">
+                                    </div>
+                                 </div>
+                                 <div class="col-sm">
+                                    <div class="color-text mt-4">
+                                       <p class="subtitle">OOPs with Core Java</p>
+                                       <h3 class="text-uppercase">E & ICT Academy, IIT Kanpur</h3>
+                                       <table>
+                                          <tbody>
+                                             <tr>
+                                                <td><i class="fa-solid fa-location-dot mr-2" role="img" aria-label="Location"></i></td>
+                                                <td>Kanpur, Uttar Pradesh, India</td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                       <a target="_blank"
+                                          href="assets/documents/oops-and-java-certificate-iit-kanpur.pdf"
+                                          class="btn custom-btn custom-btn-link">View now</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="container">
+                              <div class="row">
+                                 <div class="col-sm-6">
+                                    <div class="project-info">
+                                       <img src="assets/images/scrum-certificate-image.png" class="img-fluid"
+                                          alt="Scrum Alliance ScrumMaster certificate">
+                                    </div>
+                                 </div>
+                                 <div class="col-sm">
+                                    <div class="color-text mt-4">
+                                       <p class="subtitle">Scrum Alliance</p>
+                                       <h3 class="text-uppercase">ScrumMaster®</h3>
+                                       <table>
+                                          <tbody>
+                                             <tr>
+                                                <td><i class="fa-solid fa-location-dot mr-2" role="img" aria-label="Location"></i></td>
+                                                <td>Chennai, Tamil Nadu, India</td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                       <a target="_blank" href="assets/documents/scrum-certificate.pdf"
+                                          class="btn custom-btn custom-btn-link">View now</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="container">
+                              <div class="row">
+                                 <div class="col-sm-6">
+                                    <div class="project-info">
+                                       <img src="assets/images/sprouts.png" class="img-fluid"
+                                          alt="Vendasta SPROUT Program certificate">
+                                    </div>
+                                 </div>
+                                 <div class="col-sm">
+                                    <div class="color-text mt-4">
+                                       <p class="subtitle">SPROUT Program</p>
+                                       <h3 class="text-uppercase">Vendasta Technology</h3>
+                                       <table>
+                                          <tbody>
+                                             <tr>
+                                                <td><i class="fa-solid fa-location-dot mr-2" role="img" aria-label="Location"></i></td>
+                                                <td>Chennai, Tamil Nadu, India</td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                       <a target="_blank" href="assets/images/sprouts.png"
+                                          class="btn custom-btn custom-btn-link">View image</a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div class="swiper-pagination"></div>
+                     
+                     <div class="swiper-button-prev"></div>
+                     <div class="swiper-button-next"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      
       
       <section class="contact" id="contact">
          <div class="container">
             <div class="row">
                <div class="col-lg-8 col-12">
                   <div class="color-text contact-form">
-                     <h3>Interested in working together? Let's talk</h3>
+                     <h2>Interested in working together? Let's talk</h2>
                      <form id="contactForm">
                         <div class="row">
                            <div class="col-lg-6 col-12">

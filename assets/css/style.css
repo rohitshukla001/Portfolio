@@ -659,23 +659,6 @@ section.about .col-lg-5 {
        font-weight: bold;
    }
 
-   .google-map {
-       position: relative;
-       width: 100%;
-       padding-bottom: 75%; 
-       height: 0;
-       overflow: hidden;
-   }
-
-   .google-map iframe {
-       position: absolute;
-       top: 0;
-       left: 0;
-       width: 100% !important;
-       height: 100% !important;
-       border: 0;
-   }
-
    .footer {
        background-color: var(--surface);
        height: var(--header-height);
@@ -947,19 +930,9 @@ img {
         flex-direction: column;
     }
 
-    section.contact .col-lg-5,
-    section.contact .col-lg-6 {
+    section.contact .col-lg-8 {
         flex: 0 0 100%;
         max-width: 100%;
-    }
-
-    section.contact .col-lg-5 {
-        margin-bottom: 2rem;
-    }
-
-    .google-map {
-        padding-bottom: 60%;
-        margin-bottom: 1rem;
     }
 
     .contact-form h3 {
@@ -1065,10 +1038,6 @@ img {
 
     .swiper-slide p {
         font-size: 15px;
-    }
-
-    .google-map {
-        padding-bottom: 80%;
     }
 
     .contact-form {

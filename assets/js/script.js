@@ -1,4 +1,4 @@
-document.getElementById('copyrightYear').textContent = String(new Date().getFullYear()).slice(-2);
+document.getElementById('copyrightYear').textContent = new Date().getFullYear();
 
 document.querySelectorAll('a[href^="#"]').forEach(function (link) {
     link.addEventListener('click', function (event) {
@@ -8,6 +8,19 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
         target.scrollIntoView();
     });
 });
+
+const hackathonVideo = document.querySelector('.responsive-video');
+const mobileWidth = matchMedia('(max-width: 576px)');
+const tabletWidth = matchMedia('(max-width: 991px)');
+
+function setHackathonPoster() {
+    const tier = mobileWidth.matches ? 'mobile' : tabletWidth.matches ? 'tablet' : 'desktop';
+    hackathonVideo.poster = 'assets/images/hackathon-poster-' + tier + '.png';
+}
+
+setHackathonPoster();
+mobileWidth.addEventListener('change', setHackathonPoster);
+tabletWidth.addEventListener('change', setHackathonPoster);
 
 document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
     link.addEventListener('click', function () {

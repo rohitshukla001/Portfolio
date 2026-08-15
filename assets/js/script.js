@@ -31,36 +31,38 @@ document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
     });
 });
 
-emailjs.init("dnQ7CtoblL4arIed7");
-
 window.addEventListener('scroll', function () {
     document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 10);
 });
 
-$(function () {
-    $('[data-toggle="tooltip"]').tooltip();
-});
+if (typeof emailjs !== 'undefined') {
+    emailjs.init("dnQ7CtoblL4arIed7");
+}
 
-['#project', '#hackathon', '#certificate'].forEach(function (id) {
-    new Swiper(id + ' .swiper', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        pagination: {
-            el: id + ' .swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: id + ' .swiper-button-next',
-            prevEl: id + ' .swiper-button-prev',
-        },
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-        },
+if (typeof Swiper !== 'undefined') {
+    ['#project', '#hackathon', '#certificate'].forEach(function (id) {
+        new Swiper(id + ' .swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: id + ' .swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: id + ' .swiper-button-next',
+                prevEl: id + ' .swiper-button-prev',
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+        });
     });
-});
+}
+
+let countdownInterval;
 
 document.getElementById('contactForm').addEventListener('submit', function (event) {
     event.preventDefault();
@@ -69,9 +71,16 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     const formMessage = document.getElementById('formMessage');
     const originalBtnText = submitBtn.textContent;
 
+    clearInterval(countdownInterval);
+    formMessage.innerHTML = '';
+
+    if (typeof emailjs === 'undefined') {
+        formMessage.innerHTML = '<span class="form-message-error">Message form is unavailable right now. Please email me directly.</span>';
+        return;
+    }
+
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
-    formMessage.innerHTML = '';
 
     const formData = {
         name: document.getElementById('contactName').value,
@@ -80,7 +89,11 @@ document.getElementById('contactForm').addEventListener('submit', function (even
         submission_date: new Date().toLocaleString()
     };
 
-    emailjs.send("rohitvendasta@gmail.com", "template_euenjja", formData)
+    const timeout = new Promise(function (resolve, reject) {
+        setTimeout(function () { reject(new Error('Request timed out')); }, 15000);
+    });
+
+    Promise.race([emailjs.send("rohitvendasta@gmail.com", "template_euenjja", formData), timeout])
         .then(function (response) {
             document.getElementById('contactForm').reset();
             submitBtn.disabled = false;
@@ -89,7 +102,7 @@ document.getElementById('contactForm').addEventListener('submit', function (even
             let countdown = 5;
             formMessage.innerHTML = '<span class="form-message-success">Message sent! I\'ll get back to you soon. <span id="countdown">(' + countdown + 's)</span></span>';
 
-            const countdownInterval = setInterval(function () {
+            countdownInterval = setInterval(function () {
                 countdown--;
                 const countdownEl = document.getElementById('countdown');
                 if (countdown > 0 && countdownEl) {

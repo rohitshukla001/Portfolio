@@ -18,7 +18,7 @@ Open http://localhost:8317 from there. Edit a file, reload the page, and that is
 |---|---|
 | `index.html` | Every section of the page, top to bottom |
 | `assets/css/style.css` | All custom styling: base rules first, then media queries by breakpoint |
-| `assets/js/script.js` | Carousels, the contact form, the copyright year, anchor scrolling |
+| `assets/js/script.js` | Carousels, the contact form, the copyright year, anchor scrolling, the mobile menu, and the responsive video poster |
 | `assets/fonts/` | Calibri regular and bold, self-hosted |
 | `assets/images/` | Portrait, project screenshots, certificate images, favicon |
 | `assets/documents/` | The certificate PDFs the page links to |
@@ -29,7 +29,7 @@ Open http://localhost:8317 from there. Edit a file, reload the page, and that is
 
 ## Stack
 
-Bootstrap 4.6 supplies the grid, Swiper drives the two carousels, Font Awesome draws the icons, and EmailJS delivers the contact form. All four arrive from a CDN, so the page needs a network connection to look right. jQuery is here because Bootstrap's tooltips ask for it.
+Bootstrap 4.6 supplies the grid, Swiper drives the three carousels, Font Awesome draws the icons, and EmailJS delivers the contact form. All four arrive from a CDN, pinned to exact versions and checked with Subresource Integrity, so the page needs a network connection to look right. jQuery is here because Bootstrap's collapse menu asks for it.
 
 ## Rules the code keeps
 
@@ -40,6 +40,7 @@ Break one of these and something visible breaks with it:
 - Shared values live as custom properties in `:root`. Change `--header-height` and the body offset and footer height both follow.
 - The stylesheet and scripts carry no comments, by choice.
 - Search engines get `noindex, nofollow, noarchive, noimageindex` from the meta tag, and `robots.txt` allows crawling so they can reach that tag and obey it.
+- Every CDN tag carries an `integrity` hash. Bumping a version means recomputing that hash, which is deliberate friction.
 
 ## Deploying
 

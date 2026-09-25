@@ -1,5 +1,10 @@
 document.getElementById('copyrightYear').textContent = new Date().getFullYear();
 
+const careerStart = new Date(2022, 1);
+const now = new Date();
+const monthsWorked = (now.getFullYear() - careerStart.getFullYear()) * 12 + (now.getMonth() - careerStart.getMonth());
+document.getElementById('experienceYears').textContent = Math.floor(monthsWorked / 12) + '.' + (monthsWorked % 12);
+
 document.querySelectorAll('a[href^="#"]').forEach(function (link) {
     link.addEventListener('click', function (event) {
         const target = document.querySelector(this.getAttribute('href'));

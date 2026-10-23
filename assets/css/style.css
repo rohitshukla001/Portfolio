@@ -100,7 +100,7 @@
        color: var(--text-muted);
        font-size: 20px;
        font-weight: bold;
-       letter-spacing: -1px;
+       letter-spacing: 0;
        line-height: 1.2;
        margin-bottom: 0.5rem;
    }
@@ -161,6 +161,10 @@ section.contact .row {
 
 .swiper-slide .row {
     justify-content: center;
+}
+
+:where(#project, #certificate) .swiper-slide .row {
+    align-items: center;
 }
 
 .swiper-slide .row > [class*="col-"] {
@@ -508,6 +512,14 @@ section.about .col-lg-5 {
        margin-bottom: 15px;
    }
 
+   :where(#project, #certificate) .swiper-slide .subtitle {
+       font-size: 18px;
+   }
+
+   #hackathon .subtitle {
+       letter-spacing: -1px;
+   }
+
    .swiper-slide p {
        font-size: 16px;
        line-height: 1.6;
@@ -556,7 +568,7 @@ section.about .col-lg-5 {
        height: 45px;
        border-radius: 50%;
        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-       top: 80%;
+       top: 50%;
        transform: translateY(-50%);
        z-index: 10;
        transition: all 0.3s ease;
@@ -576,9 +588,15 @@ section.about .col-lg-5 {
        transform: scale(1.1) translateY(-50%);
    }
 
+   .swiper-slide .project-info .img-fluid {
+       width: 100%;
+       max-width: 400px;
+       max-height: none;
+   }
+
    .swiper-slide .hackathon-image {
        width: 100%;
-       max-width: 500px;
+       max-width: 400px;
        max-height: none;
        border-radius: 10px;
    }

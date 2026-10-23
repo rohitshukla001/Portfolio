@@ -18,7 +18,7 @@ Open http://localhost:8317 from there. Edit a file, reload the page, and that is
 |---|---|
 | `index.html` | Every section of the page, top to bottom |
 | `assets/css/style.css` | All custom styling: base rules first, then media queries by breakpoint |
-| `assets/js/script.js` | Carousels, the contact form, the copyright year, anchor scrolling, the mobile menu, and the responsive video poster |
+| `assets/js/script.js` | Carousels, the contact form, the copyright year, anchor scrolling, and the mobile menu |
 | `assets/fonts/` | Calibri regular and bold, self-hosted |
 | `assets/images/` | Portrait, project screenshots, certificate images, favicon |
 | `assets/documents/` | The certificate PDFs the page links to |

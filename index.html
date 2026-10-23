@@ -175,8 +175,9 @@
                                        <h3 class="text-uppercase">Inference gateway</h3>
                                        <p>
                                           The gateway sits between our applications and model providers like OpenAI,
-                                          Anthropic, and Google. It handles routing, retries, caching, and cost controls,
-                                          so apps can switch models without code changes.
+                                          Anthropic, and Google. Instead of each app calling providers directly, all
+                                          traffic flows through it. It handles routing, retries, caching, and cost
+                                          controls, so we can switch models easily.
                                        </p>
                                     </div>
                                  </div>
@@ -199,7 +200,8 @@
                                        <p>
                                           I designed this application to simplify event planning: scheduling, venue
                                           booking, and ticketing in one place, with attendee management, payments, and
-                                          role-based access built in for organizers and staff.
+                                          role-based access built in for organizers and staff. Java and Spring Boot power
+                                          the whole backend.
                                        </p>
                                     </div>
                                  </div>
@@ -222,7 +224,7 @@
                                        <p>
                                           Users can sign up, log in, browse the menu, choose their favorite food, and
                                           place orders. Django renders the whole flow server-side, from sign-up to placing
-                                          an order.
+                                          an order. There is no separate frontend; every page comes from Django templates.
                                        </p>
                                        <a target="_blank" href="https://youtu.be/3FfMfbh7lTE"
                                           class="btn custom-btn custom-btn-link">Watch video</a>
@@ -246,8 +248,8 @@
                                        <h3 class="text-uppercase">Fake News Detection</h3>
                                        <p>
                                           Users paste news text and the model labels it "Real" or "Fake" based on the
-                                          trained dataset. The classifier is Logistic Regression, served through a simple
-                                          Django web interface.
+                                          trained dataset. The classifier is Logistic Regression on NLP text features,
+                                          served through a simple Django web interface that shows the result right away.
                                        </p>
                                        <a target="_blank" href="https://youtu.be/A63WQlNk4pw"
                                           class="btn custom-btn custom-btn-link">Watch video</a>
@@ -271,8 +273,9 @@
                                        <h3 class="text-uppercase">Employee Management System</h3>
                                        <p>
                                           Employee records live in one place: add, search, update, and remove entries
-                                          through a server-rendered UI. Spring Boot handles the business logic, and
-                                          PostgreSQL stores all the data.
+                                          through a server-rendered UI. Spring Boot handles the business logic, Thymeleaf
+                                          renders the pages, and PostgreSQL stores all the data so nothing is lost between
+                                          sessions.
                                        </p>
                                     </div>
                                  </div>
@@ -315,8 +318,8 @@
                                        <h3 class="text-uppercase">Kinhaven: Alexa+ Caregiving Companion</h3>
                                        <p>
                                           An MCP server for Alexa+ that helps elderly parents track medicines by voice. It
-                                          shows the day's schedule on an Echo Show card and texts the family about missed
-                                          doses.
+                                          shows the day's schedule on an Echo Show card, logs each dose, and texts the
+                                          family through Amazon SNS when a dose is missed.
                                        </p>
                                        <p><strong>Event:</strong> Build, Ship, Shape: Amazon Developer Hackathon</p>
                                        <a target="_blank" href="https://youtu.be/SPaIRwitxi4"
@@ -345,9 +348,11 @@
                                     <div class="text-left">
                                        <p class="subtitle">Python · Google ADK · Vertex AI · Google Cloud</p>
                                        <h3 class="text-uppercase">FloraOS: Autonomous Urban Garden Management System</h3>
-                                       <p>An urban garden manager built on Google's Agent Development Kit.
-                                          A team of agents monitors soil, weather, and plant health, and
-                                          turns the readings into day-to-day gardening decisions.
+                                       <p>
+                                          An urban garden manager built on Google's Agent Development Kit. A team of
+                                          agents monitors soil, weather, and plant health, and turns the readings into
+                                          day-to-day gardening decisions. Vertex AI classifies plant photos to spot health
+                                          problems early.
                                        </p>
                                        <p><strong>Event:</strong> Agent Development Kit Hackathon with Google Cloud</p>
                                        <a target="_blank" href="https://youtu.be/g9ZfobiuUIQ"

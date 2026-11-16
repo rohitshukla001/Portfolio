@@ -27,6 +27,13 @@ window.addEventListener('scroll', function () {
     document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 10);
 });
 
+document.querySelectorAll('img').forEach(function (img) {
+    const markLoaded = function () { img.classList.add('is-loaded'); };
+    if (img.complete) markLoaded();
+    img.addEventListener('load', markLoaded);
+    img.addEventListener('error', markLoaded);
+});
+
 if (typeof emailjs !== 'undefined') {
     emailjs.init("dnQ7CtoblL4arIed7");
 }
